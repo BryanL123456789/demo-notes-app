@@ -505,6 +505,7 @@
                             "TABLE_NAME": {
                               "Fn::ImportValue": "BryanL-notes-StorageStack:ExportsOutputRefNotesTable7100B0E8C879CB95"
                             },
+                            "STRIPE_SECRET_KEY": "sk_test_51L4AlQCN6NT5BQ0aCmNfswgvm33szgd3cfeWdpOCnCjPFQzAseXMvUwsu4GGnD4oqrQQT0AnBXQe24I4OEG6aLhf003OTyDFoG",
                             "SST_DEBUG_SRC_PATH": "backend",
                             "SST_DEBUG_SRC_HANDLER": "functions/list.main",
                             "SST_DEBUG_ENDPOINT": "wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL",
@@ -865,6 +866,7 @@
                             "TABLE_NAME": {
                               "Fn::ImportValue": "BryanL-notes-StorageStack:ExportsOutputRefNotesTable7100B0E8C879CB95"
                             },
+                            "STRIPE_SECRET_KEY": "sk_test_51L4AlQCN6NT5BQ0aCmNfswgvm33szgd3cfeWdpOCnCjPFQzAseXMvUwsu4GGnD4oqrQQT0AnBXQe24I4OEG6aLhf003OTyDFoG",
                             "SST_DEBUG_SRC_PATH": "backend",
                             "SST_DEBUG_SRC_HANDLER": "functions/create.main",
                             "SST_DEBUG_ENDPOINT": "wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL",
@@ -1225,6 +1227,7 @@
                             "TABLE_NAME": {
                               "Fn::ImportValue": "BryanL-notes-StorageStack:ExportsOutputRefNotesTable7100B0E8C879CB95"
                             },
+                            "STRIPE_SECRET_KEY": "sk_test_51L4AlQCN6NT5BQ0aCmNfswgvm33szgd3cfeWdpOCnCjPFQzAseXMvUwsu4GGnD4oqrQQT0AnBXQe24I4OEG6aLhf003OTyDFoG",
                             "SST_DEBUG_SRC_PATH": "backend",
                             "SST_DEBUG_SRC_HANDLER": "functions/get.main",
                             "SST_DEBUG_ENDPOINT": "wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL",
@@ -1585,6 +1588,7 @@
                             "TABLE_NAME": {
                               "Fn::ImportValue": "BryanL-notes-StorageStack:ExportsOutputRefNotesTable7100B0E8C879CB95"
                             },
+                            "STRIPE_SECRET_KEY": "sk_test_51L4AlQCN6NT5BQ0aCmNfswgvm33szgd3cfeWdpOCnCjPFQzAseXMvUwsu4GGnD4oqrQQT0AnBXQe24I4OEG6aLhf003OTyDFoG",
                             "SST_DEBUG_SRC_PATH": "backend",
                             "SST_DEBUG_SRC_HANDLER": "functions/update.main",
                             "SST_DEBUG_ENDPOINT": "wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL",
@@ -1945,6 +1949,7 @@
                             "TABLE_NAME": {
                               "Fn::ImportValue": "BryanL-notes-StorageStack:ExportsOutputRefNotesTable7100B0E8C879CB95"
                             },
+                            "STRIPE_SECRET_KEY": "sk_test_51L4AlQCN6NT5BQ0aCmNfswgvm33szgd3cfeWdpOCnCjPFQzAseXMvUwsu4GGnD4oqrQQT0AnBXQe24I4OEG6aLhf003OTyDFoG",
                             "SST_DEBUG_SRC_PATH": "backend",
                             "SST_DEBUG_SRC_HANDLER": "functions/delete.main",
                             "SST_DEBUG_ENDPOINT": "wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL",
