@@ -15,7 +15,8 @@ function StorageStack({ stack, app }) {
     primaryIndex: { partitionKey: "userId", sortKey: "noteId" }
   });
   return {
-    table
+    table,
+    bucket
   };
 }
 __name(StorageStack, "StorageStack");

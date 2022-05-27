@@ -1715,3 +1715,16 @@ Stack BryanL-notes-StorageStack
 [2022-05-27T12:53:57.315] [INFO] client - [90mStacks: Deploying completed.[39m
 [2022-05-27T12:53:59.043] [INFO] client - [90mStacks: Deploying completed.[39m
 [2022-05-27T12:53:59.331] [INFO] client - [90mStacks: Deploying completed.[39m
+[2022-05-27T12:56:15.116] [INFO] client - [90mStacks: Building changes...[39m
+[2022-05-27T12:56:15.129] [DEBUG] default - synth {
+  app: 'node .build/run.mjs',
+  output: '.build/cdk.out',
+  rollback: true,
+  roleArn: undefined,
+  verbose: 0,
+  noColor: false
+}
+[2022-05-27T12:56:15.140] [INFO] client - [90mStacks: Synthesizing changes...[39m
+[2022-05-27T12:56:21.040] [TRACE] cdk - 
+
+[2022-05-27T12:56:21.050] [INFO] client - [90mStacks: No changes to deploy.[39m
