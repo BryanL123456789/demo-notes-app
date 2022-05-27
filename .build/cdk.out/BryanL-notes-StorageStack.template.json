@@ -1,0 +1,137 @@
+{
+ "Resources": {
+  "SSTMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Metadata": {
+    "aws:cdk:path": "BryanL-notes-StorageStack/SSTMetadata",
+    "sst:version": "1.2.10",
+    "sst:constructs": [
+     {
+      "id": "Uploads",
+      "addr": "c8f741048fd258bfd7b30c55ef3c47f3df8c7a5c64",
+      "stack": "BryanL-notes-StorageStack",
+      "type": "Bucket",
+      "data": {
+       "name": {
+        "Ref": "UploadsBucketC4B27CC7"
+       },
+       "notifications": [],
+       "notificationNames": []
+      }
+     },
+     {
+      "id": "Notes",
+      "addr": "c81ea39cfd5672e70f96f3178d4ec6254cf6dea5a8",
+      "stack": "BryanL-notes-StorageStack",
+      "type": "Table",
+      "data": {
+       "tableName": {
+        "Ref": "NotesTable7100B0E8"
+       },
+       "consumers": []
+      }
+     }
+    ]
+   }
+  },
+  "UploadsBucketC4B27CC7": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "notes"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "BryanL"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "BryanL-notes-StorageStack/Uploads/Bucket/Resource"
+   }
+  },
+  "NotesTable7100B0E8": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "KeySchema": [
+     {
+      "AttributeName": "userId",
+      "KeyType": "HASH"
+     },
+     {
+      "AttributeName": "noteId",
+      "KeyType": "RANGE"
+     }
+    ],
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "userId",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "noteId",
+      "AttributeType": "S"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "PointInTimeRecoverySpecification": {
+     "PointInTimeRecoveryEnabled": true
+    },
+    "TableName": "BryanL-notes-Notes",
+    "Tags": [
+     {
+      "Key": "sst:app",
+      "Value": "notes"
+     },
+     {
+      "Key": "sst:stage",
+      "Value": "BryanL"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "BryanL-notes-StorageStack/Notes/Table/Resource"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

@@ -1,15 +1,15 @@
-[2022-05-27T09:59:19.256] [DEBUG] default - SST: 1.2.10
-[2022-05-27T09:59:19.259] [DEBUG] default - CDK: 2.24.0
-[2022-05-27T09:59:19.263] [DEBUG] aws-auth - Determining if we're on an EC2 instance.
-[2022-05-27T09:59:19.331] [DEBUG] aws-auth - Does not look like an EC2 instance.
-[2022-05-27T09:59:19.375] [INFO] default - Using stage: BryanL
-[2022-05-27T09:59:19.379] [INFO] default - [90mPreparing your SST app[39m
-[2022-05-27T09:59:19.416] [INFO] default - 
-[2022-05-27T09:59:19.418] [INFO] default - =======================
-[2022-05-27T09:59:19.420] [INFO] default -  Deploying debug stack
-[2022-05-27T09:59:19.430] [INFO] default - =======================
-[2022-05-27T09:59:19.432] [INFO] default - 
-[2022-05-27T09:59:19.434] [DEBUG] default - synth {
+[2022-05-27T11:24:14.202] [DEBUG] default - SST: 1.2.10
+[2022-05-27T11:24:14.204] [DEBUG] default - CDK: 2.24.0
+[2022-05-27T11:24:14.208] [DEBUG] aws-auth - Determining if we're on an EC2 instance.
+[2022-05-27T11:24:14.282] [DEBUG] aws-auth - Does not look like an EC2 instance.
+[2022-05-27T11:24:14.325] [INFO] default - Using stage: BryanL
+[2022-05-27T11:24:14.328] [INFO] default - [90mPreparing your SST app[39m
+[2022-05-27T11:24:14.361] [INFO] default - 
+[2022-05-27T11:24:14.363] [INFO] default - =======================
+[2022-05-27T11:24:14.365] [INFO] default -  Deploying debug stack
+[2022-05-27T11:24:14.370] [INFO] default - =======================
+[2022-05-27T11:24:14.372] [INFO] default - 
+[2022-05-27T11:24:14.374] [DEBUG] default - synth {
   app: 'node bin/index.mjs notes BryanL us-east-1 "C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes"',
   output: 'cdk.out',
   rollback: true,
@@ -17,22 +17,22 @@
   verbose: 0,
   noColor: false
 }
-[2022-05-27T09:59:23.471] [TRACE] cdk - 
+[2022-05-27T11:24:18.295] [TRACE] cdk - 
 
-[2022-05-27T09:59:23.498] [INFO] default - [90mDeploying stacks[39m
-[2022-05-27T09:59:23.501] [DEBUG] default - checkInReviewBootstrapStacks
-[2022-05-27T09:59:23.503] [DEBUG] default - checkInReviewBootstrapStackInRegion us-east-1
-[2022-05-27T09:59:23.876] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-debug-stack","name":"BryanL-notes-debug-stack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
-[2022-05-27T09:59:23.879] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-debug-stack","name":"BryanL-notes-debug-stack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
-[2022-05-27T09:59:23.880] [DEBUG] default - deploy stack: started BryanL-notes-debug-stack
-[2022-05-27T09:59:23.881] [DEBUG] default - deploy stack: get pre-deploy status
-[2022-05-27T09:59:24.168] [DEBUG] default - deploy stack: get pre-deploy status: {
+[2022-05-27T11:24:18.321] [INFO] default - [90mDeploying stacks[39m
+[2022-05-27T11:24:18.324] [DEBUG] default - checkInReviewBootstrapStacks
+[2022-05-27T11:24:18.325] [DEBUG] default - checkInReviewBootstrapStackInRegion us-east-1
+[2022-05-27T11:24:18.704] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-debug-stack","name":"BryanL-notes-debug-stack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
+[2022-05-27T11:24:18.706] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-debug-stack","name":"BryanL-notes-debug-stack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
+[2022-05-27T11:24:18.708] [DEBUG] default - deploy stack: started BryanL-notes-debug-stack
+[2022-05-27T11:24:18.709] [DEBUG] default - deploy stack: get pre-deploy status
+[2022-05-27T11:24:18.997] [DEBUG] default - deploy stack: get pre-deploy status: {
   StackStatus: 'CREATE_COMPLETE',
   LastUpdatedTime: 2022-05-27T15:19:38.188Z
 }
-[2022-05-27T09:59:24.171] [DEBUG] default - deploy stack: addInUseExports
-[2022-05-27T09:59:24.175] [DEBUG] default - deploy stack: isTemplateChanged
-[2022-05-27T09:59:24.642] [DEBUG] default - Resources:
+[2022-05-27T11:24:19.000] [DEBUG] default - deploy stack: addInUseExports
+[2022-05-27T11:24:19.002] [DEBUG] default - deploy stack: isTemplateChanged
+[2022-05-27T11:24:19.514] [DEBUG] default - Resources:
   TableCD117FA1:
     Type: AWS::DynamoDB::Table
     Properties:
@@ -632,7 +632,7 @@ Rules:
           CDK bootstrap stack version 6 required. Please run 'cdk bootstrap'
           with a recent version of the CDK CLI.
 
-[2022-05-27T09:59:24.645] [DEBUG] default - Resources:
+[2022-05-27T11:24:19.517] [DEBUG] default - Resources:
   TableCD117FA1:
     Type: AWS::DynamoDB::Table
     Properties:
@@ -1232,8 +1232,8 @@ Rules:
           CDK bootstrap stack version 6 required. Please run 'cdk bootstrap'
           with a recent version of the CDK CLI.
 
-[2022-05-27T09:59:24.647] [DEBUG] default - deploy stack: isTemplateChanged: unchanged
-[2022-05-27T09:59:24.648] [DEBUG] default - deploy stack: done BryanL-notes-debug-stack {
+[2022-05-27T11:24:19.519] [DEBUG] default - deploy stack: isTemplateChanged: unchanged
+[2022-05-27T11:24:19.521] [DEBUG] default - deploy stack: done BryanL-notes-debug-stack {
   status: 'unchanged',
   statusReason: undefined,
   account: '499049105488',
@@ -1244,20 +1244,20 @@ Rules:
   },
   exports: {}
 }
-[2022-05-27T09:59:24.650] [INFO] default - [32m[39m
+[2022-05-27T11:24:19.522] [INFO] default - [32m[39m
 [32m ✅  BryanL-notes-debug-stack (no changes)[39m
 [32m[39m
-[2022-05-27T09:59:24.652] [DEBUG] default - At least 1 stack successfully deployed, call deployStacks() again
-[2022-05-27T09:59:24.655] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-debug-stack","name":"BryanL-notes-debug-stack","status":"unchanged","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653667164650,"endedAt":1653667164650,"events":[],"outputs":{"BucketArn":"arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs","BucketName":"bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs","Endpoint":"wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL"},"exports":{}}]
-[2022-05-27T09:59:24.657] [INFO] default - 
+[2022-05-27T11:24:19.525] [DEBUG] default - At least 1 stack successfully deployed, call deployStacks() again
+[2022-05-27T11:24:19.526] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-debug-stack","name":"BryanL-notes-debug-stack","status":"unchanged","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672259522,"endedAt":1653672259522,"events":[],"outputs":{"BucketArn":"arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs","BucketName":"bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs","Endpoint":"wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL"},"exports":{}}]
+[2022-05-27T11:24:19.528] [INFO] default - 
 Stack BryanL-notes-debug-stack
-[2022-05-27T09:59:24.659] [INFO] default -   Status: no changes
-[2022-05-27T09:59:24.661] [INFO] default -   Outputs:
-[2022-05-27T09:59:24.663] [INFO] default -     BucketArn: arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
-[2022-05-27T09:59:24.665] [INFO] default -     BucketName: bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
-[2022-05-27T09:59:24.668] [INFO] default -     Endpoint: wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL
-[2022-05-27T09:59:24.671] [INFO] default - 
-[2022-05-27T09:59:24.674] [DEBUG] default - deployRet [
+[2022-05-27T11:24:19.529] [INFO] default -   Status: no changes
+[2022-05-27T11:24:19.531] [INFO] default -   Outputs:
+[2022-05-27T11:24:19.533] [INFO] default -     BucketArn: arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+[2022-05-27T11:24:19.535] [INFO] default -     BucketName: bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+[2022-05-27T11:24:19.537] [INFO] default -     Endpoint: wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL
+[2022-05-27T11:24:19.540] [INFO] default - 
+[2022-05-27T11:24:19.542] [DEBUG] default - deployRet [
   {
     id: 'BryanL-notes-debug-stack',
     name: 'BryanL-notes-debug-stack',
@@ -1272,12 +1272,12 @@ Stack BryanL-notes-debug-stack
     exports: {}
   }
 ]
-[2022-05-27T09:59:24.676] [INFO] default - 
-[2022-05-27T09:59:24.678] [INFO] default - ===============
-[2022-05-27T09:59:24.680] [INFO] default -  Deploying app
-[2022-05-27T09:59:24.681] [INFO] default - ===============
-[2022-05-27T09:59:24.683] [INFO] default - 
-[2022-05-27T09:59:24.688] [DEBUG] default - synth {
+[2022-05-27T11:24:19.544] [INFO] default - 
+[2022-05-27T11:24:19.546] [INFO] default - ===============
+[2022-05-27T11:24:19.548] [INFO] default -  Deploying app
+[2022-05-27T11:24:19.550] [INFO] default - ===============
+[2022-05-27T11:24:19.553] [INFO] default - 
+[2022-05-27T11:24:19.557] [DEBUG] default - synth {
   app: 'node .build/run.mjs',
   output: '.build/cdk.out',
   rollback: true,
@@ -1285,801 +1285,433 @@ Stack BryanL-notes-debug-stack
   verbose: 0,
   noColor: false
 }
-[2022-05-27T09:59:28.722] [TRACE] cdk - 
+[2022-05-27T11:24:23.393] [TRACE] cdk - 
 
-[2022-05-27T09:59:35.407] [INFO] default - [90mDeploying stacks[39m
-[2022-05-27T09:59:35.414] [DEBUG] default - checkInReviewBootstrapStacks
-[2022-05-27T09:59:35.419] [DEBUG] default - checkInReviewBootstrapStackInRegion us-east-1
-[2022-05-27T09:59:35.731] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-MyStack","name":"BryanL-notes-MyStack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
-[2022-05-27T09:59:35.734] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-MyStack","name":"BryanL-notes-MyStack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
-[2022-05-27T09:59:35.736] [DEBUG] default - deploy stack: started BryanL-notes-MyStack
-[2022-05-27T09:59:35.738] [DEBUG] default - deploy stack: get pre-deploy status
-[2022-05-27T09:59:36.025] [DEBUG] default - deploy stack: get pre-deploy status: {
-  StackStatus: 'CREATE_COMPLETE',
-  LastUpdatedTime: 2022-05-27T15:21:30.995Z
+[2022-05-27T11:24:29.565] [INFO] default - [90mDeploying stacks[39m
+[2022-05-27T11:24:29.573] [DEBUG] default - checkInReviewBootstrapStacks
+[2022-05-27T11:24:29.577] [DEBUG] default - checkInReviewBootstrapStackInRegion us-east-1
+[2022-05-27T11:24:29.997] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
+[2022-05-27T11:24:30.000] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
+[2022-05-27T11:24:30.002] [DEBUG] default - deploy stack: started BryanL-notes-StorageStack
+[2022-05-27T11:24:30.004] [DEBUG] default - deploy stack: get pre-deploy status
+[2022-05-27T11:24:30.300] [DEBUG] default - deploy stack: get pre-deploy status: stack does not exist
+[2022-05-27T11:24:30.304] [DEBUG] default - deploy stack: addInUseExports
+[2022-05-27T11:24:30.306] [DEBUG] default - deploy stack: isTemplateChanged
+[2022-05-27T11:24:30.307] [DEBUG] default - deploy stack: run cdk deploy
+[2022-05-27T11:24:30.318] [DEBUG] default - deploy stack: poll stack status
+[2022-05-27T11:24:30.640] [DEBUG] default - deploy stack: poll stack status: unknown
+[2022-05-27T11:24:31.457] [TRACE] default - deploy stack: run cdk deploy: stderr: 
+✨  Synthesis time: 0.01s
+
+
+[2022-05-27T11:24:31.460] [TRACE] default - deploy stack: run cdk deploy: stderr: [1mBryanL-notes-StorageStack[22m: deploying...
+
+[2022-05-27T11:24:32.549] [TRACE] default - deploy stack: run cdk deploy: stderr: [0%] start: Publishing a8ce1ac067ff92ca88cd5e63d0712db561987d56b21244e64360c51ac49f19ec:499049105488-us-east-1
+
+[2022-05-27T11:24:33.952] [DEBUG] default - deploy stack: poll stack status: unknown
+[2022-05-27T11:24:34.158] [TRACE] default - deploy stack: run cdk deploy: stderr: [100%] success: Published a8ce1ac067ff92ca88cd5e63d0712db561987d56b21244e64360c51ac49f19ec:499049105488-us-east-1
+
+[2022-05-27T11:24:34.454] [TRACE] default - deploy stack: run cdk deploy: stderr: [1mBryanL-notes-StorageStack[22m: creating CloudFormation changeset...
+
+[2022-05-27T11:24:37.259] [DEBUG] default - deploy stack: poll stack status: { StackStatus: 'REVIEW_IN_PROGRESS', LastUpdatedTime: undefined }
+[2022-05-27T11:24:37.263] [DEBUG] default - deploy stack: poll stack status: cf update will start
+[2022-05-27T11:24:40.562] [DEBUG] default - deploy stack: poll stack status: { StackStatus: 'REVIEW_IN_PROGRESS', LastUpdatedTime: undefined }
+[2022-05-27T11:24:40.565] [DEBUG] default - deploy stack: poll stack status: cf update will start
+[2022-05-27T11:24:43.873] [DEBUG] default - deploy stack: poll stack status: {
+  StackStatus: 'CREATE_IN_PROGRESS',
+  LastUpdatedTime: 2022-05-27T17:24:40.629Z
 }
-[2022-05-27T09:59:36.029] [DEBUG] default - deploy stack: addInUseExports
-[2022-05-27T09:59:36.033] [DEBUG] default - deploy stack: isTemplateChanged
-[2022-05-27T09:59:36.317] [DEBUG] default - Resources:
-  SSTMetadata:
-    Type: AWS::CDK::Metadata
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/SSTMetadata
-      sst:version: 1.2.10
-      sst:constructs:
-        - id: api
-          addr: c8d2c46a9de94e091c69797cd1d85f4bb5c22f3430
-          stack: BryanL-notes-MyStack
-          type: Api
-          data:
-            graphql: false
-            url:
-              Fn::Join:
-                - ''
-                - - https://
-                  - Ref: apiApiC3C473D0
-                  - .execute-api.us-east-1.
-                  - Ref: AWS::URLSuffix
-                  - /
-            httpApiId:
-              Ref: apiApiC3C473D0
-            routes:
-              - type: function
-                route: GET /
-                fn:
-                  node: c8e80d242fd2887f5dd29acd7aa640d57dbba3bc02
-                  stack: BryanL-notes-MyStack
-        - id: Lambda_GET_--
-          addr: c8e80d242fd2887f5dd29acd7aa640d57dbba3bc02
-          stack: BryanL-notes-MyStack
-          type: Function
-          data:
-            localId: BryanL-notes-MyStack-api-Lambda_GET_-
-            arn:
-              Fn::GetAtt:
-                - apiLambdaGET2D5CB7A7
-                - Arn
-  apiApiC3C473D0:
-    Type: AWS::ApiGatewayV2::Api
-    Properties:
-      CorsConfiguration:
-        AllowHeaders:
-          - '*'
-        AllowMethods:
-          - '*'
-        AllowOrigins:
-          - '*'
-      Name: BryanL-notes-api
-      ProtocolType: HTTP
-      Tags:
-        sst:app: notes
-        sst:stage: BryanL
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Api/Resource
-  apiApiDefaultStageA626ED4D:
-    Type: AWS::ApiGatewayV2::Stage
-    Properties:
-      ApiId:
-        Ref: apiApiC3C473D0
-      StageName: $default
-      AccessLogSettings:
-        DestinationArn:
-          Fn::GetAtt:
-            - apiLogGroup924E5B7A
-            - Arn
-        Format: >-
-          {"requestTime":"$context.requestTime","requestId":"$context.requestId","httpMethod":"$context.httpMethod","path":"$context.path","routeKey":"$context.routeKey","status":$context.status,"responseLatency":$context.responseLatency,"integrationRequestId":"$context.integration.requestId","integrationStatus":"$context.integration.status","integrationLatency":"$context.integration.latency","integrationServiceStatus":"$context.integration.integrationStatus","ip":"$context.identity.sourceIp","userAgent":"$context.identity.userAgent","cognitoIdentityId":"$context.identity.cognitoIdentityId"}
-      AutoDeploy: true
-      Tags:
-        sst:app: notes
-        sst:stage: BryanL
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Api/DefaultStage/Resource
-  apiLogGroup924E5B7A:
-    Type: AWS::Logs::LogGroup
-    Properties:
-      LogGroupName:
-        Fn::Join:
-          - ''
-          - - /aws/vendedlogs/apis/BryanL-notes-api-
-            - Ref: apiApiC3C473D0
-            - /default
-      Tags:
-        - Key: sst:app
-          Value: notes
-        - Key: sst:stage
-          Value: BryanL
-    UpdateReplacePolicy: Retain
-    DeletionPolicy: Retain
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/LogGroup/Resource
-  apiLambdaGETServiceRole57A117D1:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Statement:
-          - Action: sts:AssumeRole
-            Effect: Allow
-            Principal:
-              Service: lambda.amazonaws.com
-        Version: '2012-10-17'
-      ManagedPolicyArns:
-        - Fn::Join:
-            - ''
-            - - 'arn:'
-              - Ref: AWS::Partition
-              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
-      Tags:
-        - Key: sst:app
-          Value: notes
-        - Key: sst:stage
-          Value: BryanL
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/ServiceRole/Resource
-  apiLambdaGETServiceRoleDefaultPolicyE9384899:
-    Type: AWS::IAM::Policy
-    Properties:
-      PolicyDocument:
-        Statement:
-          - Action:
-              - xray:PutTraceSegments
-              - xray:PutTelemetryRecords
-            Effect: Allow
-            Resource: '*'
-          - Action: s3:*
-            Effect: Allow
-            Resource:
-              - >-
-                arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
-              - >-
-                arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs/*
-        Version: '2012-10-17'
-      PolicyName: apiLambdaGETServiceRoleDefaultPolicyE9384899
-      Roles:
-        - Ref: apiLambdaGETServiceRole57A117D1
-    Metadata:
-      aws:cdk:path: >-
-        BryanL-notes-MyStack/api/Lambda_GET_--/ServiceRole/DefaultPolicy/Resource
-  apiLambdaGET2D5CB7A7:
-    Type: AWS::Lambda::Function
-    Properties:
-      Code:
-        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
-        S3Key: a9565a424c73ec5adc8374c8aca92e3582b9caa2019c3c1578306b21ac524b33.zip
-      Role:
-        Fn::GetAtt:
-          - apiLambdaGETServiceRole57A117D1
-          - Arn
-      Environment:
-        Variables:
-          SST_DEBUG_SRC_PATH: backend
-          SST_DEBUG_SRC_HANDLER: functions/lambda.handler
-          SST_DEBUG_ENDPOINT: wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL
-          SST_DEBUG_BUCKET_NAME: bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
-          SST_FUNCTION_ID: BryanL-notes-MyStack-api-Lambda_GET_-
-          AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
-          SST_DEBUG_IS_API_ROUTE: '1'
-      EphemeralStorage:
-        Size: 512
-      Handler: index.main
-      MemorySize: 1024
-      Runtime: nodejs16.x
-      Tags:
-        - Key: sst:app
-          Value: notes
-        - Key: sst:stage
-          Value: BryanL
-      Timeout: 10
-      TracingConfig:
-        Mode: Active
-    DependsOn:
-      - apiLambdaGETServiceRoleDefaultPolicyE9384899
-      - apiLambdaGETServiceRole57A117D1
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/Resource
-      aws:asset:path: >-
-        asset.a9565a424c73ec5adc8374c8aca92e3582b9caa2019c3c1578306b21ac524b33.zip
-      aws:asset:is-bundled: false
-      aws:asset:property: Code
-  apiLambdaGETEventInvokeConfig794FB4BC:
-    Type: AWS::Lambda::EventInvokeConfig
-    Properties:
-      FunctionName:
-        Ref: apiLambdaGET2D5CB7A7
-      Qualifier: $LATEST
-      MaximumRetryAttempts: 0
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/EventInvokeConfig/Resource
-  apiRouteGETIntegrationGET451F73F0:
-    Type: AWS::ApiGatewayV2::Integration
-    Properties:
-      ApiId:
-        Ref: apiApiC3C473D0
-      IntegrationType: AWS_PROXY
-      IntegrationUri:
-        Fn::GetAtt:
-          - apiLambdaGET2D5CB7A7
-          - Arn
-      PayloadFormatVersion: '2.0'
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Integration_GET_--/Resource
-  apiRouteGETIntegrationGETPermission02100559:
-    Type: AWS::Lambda::Permission
-    Properties:
-      Action: lambda:InvokeFunction
-      FunctionName:
-        Fn::GetAtt:
-          - apiLambdaGET2D5CB7A7
-          - Arn
-      Principal: apigateway.amazonaws.com
-      SourceArn:
-        Fn::Join:
-          - ''
-          - - 'arn:'
-            - Ref: AWS::Partition
-            - ':execute-api:us-east-1:499049105488:'
-            - Ref: apiApiC3C473D0
-            - /*/*/
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Integration_GET_---Permission
-  apiRouteGET1A9E87AB:
-    Type: AWS::ApiGatewayV2::Route
-    Properties:
-      ApiId:
-        Ref: apiApiC3C473D0
-      RouteKey: GET /
-      AuthorizationType: NONE
-      Target:
-        Fn::Join:
-          - ''
-          - - integrations/
-            - Ref: apiRouteGETIntegrationGET451F73F0
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Resource
-Parameters:
-  BootstrapVersion:
-    Type: AWS::SSM::Parameter::Value<String>
-    Default: /cdk-bootstrap/hnb659fds/version
-    Description: >-
-      Version of the CDK Bootstrap resources in this environment, automatically
-      retrieved from SSM Parameter Store. [cdk:skip]
-Rules:
-  CheckBootstrapVersion:
-    Assertions:
-      - Assert:
-          Fn::Not:
-            - Fn::Contains:
-                - - '1'
-                  - '2'
-                  - '3'
-                  - '4'
-                  - '5'
-                - Ref: BootstrapVersion
-        AssertDescription: >-
-          CDK bootstrap stack version 6 required. Please run 'cdk bootstrap'
-          with a recent version of the CDK CLI.
-
-[2022-05-27T09:59:36.321] [DEBUG] default - Resources:
-  SSTMetadata:
-    Type: AWS::CDK::Metadata
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/SSTMetadata
-      sst:version: 1.2.10
-      sst:constructs:
-        - id: api
-          addr: c8d2c46a9de94e091c69797cd1d85f4bb5c22f3430
-          stack: BryanL-notes-MyStack
-          type: Api
-          data:
-            graphql: false
-            url:
-              Fn::Join:
-                - ''
-                - - https://
-                  - Ref: apiApiC3C473D0
-                  - .execute-api.us-east-1.
-                  - Ref: AWS::URLSuffix
-                  - /
-            httpApiId:
-              Ref: apiApiC3C473D0
-            routes:
-              - type: function
-                route: GET /
-                fn:
-                  node: c8e80d242fd2887f5dd29acd7aa640d57dbba3bc02
-                  stack: BryanL-notes-MyStack
-        - id: Lambda_GET_--
-          addr: c8e80d242fd2887f5dd29acd7aa640d57dbba3bc02
-          stack: BryanL-notes-MyStack
-          type: Function
-          data:
-            localId: BryanL-notes-MyStack-api-Lambda_GET_-
-            arn:
-              Fn::GetAtt:
-                - apiLambdaGET2D5CB7A7
-                - Arn
-  apiApiC3C473D0:
-    Type: AWS::ApiGatewayV2::Api
-    Properties:
-      CorsConfiguration:
-        AllowHeaders:
-          - '*'
-        AllowMethods:
-          - '*'
-        AllowOrigins:
-          - '*'
-      Name: BryanL-notes-api
-      ProtocolType: HTTP
-      Tags:
-        sst:app: notes
-        sst:stage: BryanL
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Api/Resource
-  apiApiDefaultStageA626ED4D:
-    Type: AWS::ApiGatewayV2::Stage
-    Properties:
-      ApiId:
-        Ref: apiApiC3C473D0
-      StageName: $default
-      AccessLogSettings:
-        DestinationArn:
-          Fn::GetAtt:
-            - apiLogGroup924E5B7A
-            - Arn
-        Format: >-
-          {"requestTime":"$context.requestTime","requestId":"$context.requestId","httpMethod":"$context.httpMethod","path":"$context.path","routeKey":"$context.routeKey","status":$context.status,"responseLatency":$context.responseLatency,"integrationRequestId":"$context.integration.requestId","integrationStatus":"$context.integration.status","integrationLatency":"$context.integration.latency","integrationServiceStatus":"$context.integration.integrationStatus","ip":"$context.identity.sourceIp","userAgent":"$context.identity.userAgent","cognitoIdentityId":"$context.identity.cognitoIdentityId"}
-      AutoDeploy: true
-      Tags:
-        sst:app: notes
-        sst:stage: BryanL
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Api/DefaultStage/Resource
-  apiLogGroup924E5B7A:
-    Type: AWS::Logs::LogGroup
-    Properties:
-      LogGroupName:
-        Fn::Join:
-          - ''
-          - - /aws/vendedlogs/apis/BryanL-notes-api-
-            - Ref: apiApiC3C473D0
-            - /default
-      Tags:
-        - Key: sst:app
-          Value: notes
-        - Key: sst:stage
-          Value: BryanL
-    UpdateReplacePolicy: Retain
-    DeletionPolicy: Retain
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/LogGroup/Resource
-  apiLambdaGETServiceRole57A117D1:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Statement:
-          - Action: sts:AssumeRole
-            Effect: Allow
-            Principal:
-              Service: lambda.amazonaws.com
-        Version: '2012-10-17'
-      ManagedPolicyArns:
-        - Fn::Join:
-            - ''
-            - - 'arn:'
-              - Ref: AWS::Partition
-              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
-      Tags:
-        - Key: sst:app
-          Value: notes
-        - Key: sst:stage
-          Value: BryanL
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/ServiceRole/Resource
-  apiLambdaGETServiceRoleDefaultPolicyE9384899:
-    Type: AWS::IAM::Policy
-    Properties:
-      PolicyDocument:
-        Statement:
-          - Action:
-              - xray:PutTraceSegments
-              - xray:PutTelemetryRecords
-            Effect: Allow
-            Resource: '*'
-          - Action: s3:*
-            Effect: Allow
-            Resource:
-              - >-
-                arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
-              - >-
-                arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs/*
-        Version: '2012-10-17'
-      PolicyName: apiLambdaGETServiceRoleDefaultPolicyE9384899
-      Roles:
-        - Ref: apiLambdaGETServiceRole57A117D1
-    Metadata:
-      aws:cdk:path: >-
-        BryanL-notes-MyStack/api/Lambda_GET_--/ServiceRole/DefaultPolicy/Resource
-  apiLambdaGET2D5CB7A7:
-    Type: AWS::Lambda::Function
-    Properties:
-      Code:
-        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
-        S3Key: a9565a424c73ec5adc8374c8aca92e3582b9caa2019c3c1578306b21ac524b33.zip
-      Role:
-        Fn::GetAtt:
-          - apiLambdaGETServiceRole57A117D1
-          - Arn
-      Environment:
-        Variables:
-          SST_DEBUG_SRC_PATH: backend
-          SST_DEBUG_SRC_HANDLER: functions/lambda.handler
-          SST_DEBUG_ENDPOINT: wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL
-          SST_DEBUG_BUCKET_NAME: bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
-          SST_FUNCTION_ID: BryanL-notes-MyStack-api-Lambda_GET_-
-          AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
-          SST_DEBUG_IS_API_ROUTE: '1'
-      EphemeralStorage:
-        Size: 512
-      Handler: index.main
-      MemorySize: 1024
-      Runtime: nodejs16.x
-      Tags:
-        - Key: sst:app
-          Value: notes
-        - Key: sst:stage
-          Value: BryanL
-      Timeout: 10
-      TracingConfig:
-        Mode: Active
-    DependsOn:
-      - apiLambdaGETServiceRoleDefaultPolicyE9384899
-      - apiLambdaGETServiceRole57A117D1
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/Resource
-      aws:asset:path: >-
-        asset.a9565a424c73ec5adc8374c8aca92e3582b9caa2019c3c1578306b21ac524b33.zip
-      aws:asset:is-bundled: false
-      aws:asset:property: Code
-  apiLambdaGETEventInvokeConfig794FB4BC:
-    Type: AWS::Lambda::EventInvokeConfig
-    Properties:
-      FunctionName:
-        Ref: apiLambdaGET2D5CB7A7
-      Qualifier: $LATEST
-      MaximumRetryAttempts: 0
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/EventInvokeConfig/Resource
-  apiRouteGETIntegrationGET451F73F0:
-    Type: AWS::ApiGatewayV2::Integration
-    Properties:
-      ApiId:
-        Ref: apiApiC3C473D0
-      IntegrationType: AWS_PROXY
-      IntegrationUri:
-        Fn::GetAtt:
-          - apiLambdaGET2D5CB7A7
-          - Arn
-      PayloadFormatVersion: '2.0'
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Integration_GET_--/Resource
-  apiRouteGETIntegrationGETPermission02100559:
-    Type: AWS::Lambda::Permission
-    Properties:
-      Action: lambda:InvokeFunction
-      FunctionName:
-        Fn::GetAtt:
-          - apiLambdaGET2D5CB7A7
-          - Arn
-      Principal: apigateway.amazonaws.com
-      SourceArn:
-        Fn::Join:
-          - ''
-          - - 'arn:'
-            - Ref: AWS::Partition
-            - ':execute-api:us-east-1:499049105488:'
-            - Ref: apiApiC3C473D0
-            - /*/*/
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Integration_GET_---Permission
-  apiRouteGET1A9E87AB:
-    Type: AWS::ApiGatewayV2::Route
-    Properties:
-      ApiId:
-        Ref: apiApiC3C473D0
-      RouteKey: GET /
-      AuthorizationType: NONE
-      Target:
-        Fn::Join:
-          - ''
-          - - integrations/
-            - Ref: apiRouteGETIntegrationGET451F73F0
-    Metadata:
-      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Resource
-Parameters:
-  BootstrapVersion:
-    Type: AWS::SSM::Parameter::Value<String>
-    Default: /cdk-bootstrap/hnb659fds/version
-    Description: >-
-      Version of the CDK Bootstrap resources in this environment, automatically
-      retrieved from SSM Parameter Store. [cdk:skip]
-Rules:
-  CheckBootstrapVersion:
-    Assertions:
-      - Assert:
-          Fn::Not:
-            - Fn::Contains:
-                - - '1'
-                  - '2'
-                  - '3'
-                  - '4'
-                  - '5'
-                - Ref: BootstrapVersion
-        AssertDescription: >-
-          CDK bootstrap stack version 6 required. Please run 'cdk bootstrap'
-          with a recent version of the CDK CLI.
-
-[2022-05-27T09:59:36.323] [DEBUG] default - deploy stack: isTemplateChanged: unchanged
-[2022-05-27T09:59:36.325] [DEBUG] default - deploy stack: done BryanL-notes-MyStack {
-  status: 'unchanged',
+[2022-05-27T11:24:43.876] [DEBUG] default - deploy stack: poll stack status: cf update started
+[2022-05-27T11:24:43.879] [DEBUG] default - deploy stack: done BryanL-notes-StorageStack {
+  status: 'deploying',
   statusReason: undefined,
   account: '499049105488',
   outputs: {},
   exports: {}
 }
-[2022-05-27T09:59:36.326] [INFO] default - [32m[39m
-[32m ✅  BryanL-notes-MyStack (no changes)[39m
+[2022-05-27T11:24:43.881] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[],"outputs":{},"exports":{}}]
+[2022-05-27T11:24:43.882] [INFO] default - Checking deploy status...
+[2022-05-27T11:24:43.902] [DEBUG] default - deploy stack: run cdk deploy: exited with code null
+[2022-05-27T11:24:48.888] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[],"outputs":{},"exports":{}}]
+[2022-05-27T11:24:48.892] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T11:24:49.192] [INFO] default - BryanL-notes-StorageStack | [0mCREATE_IN_PROGRESS[0m | AWS::CloudFormation::Stack | [0m[1mBryanL-notes-StorageStack[22m[0m | [0mUser Initiated[0m
+[2022-05-27T11:24:49.196] [INFO] default - BryanL-notes-StorageStack | [0mCREATE_IN_PROGRESS[0m | AWS::DynamoDB::Table | [0m[1mNotesTable7100B0E8[22m[0m
+[2022-05-27T11:24:49.199] [INFO] default - BryanL-notes-StorageStack | [0mCREATE_IN_PROGRESS[0m | AWS::DynamoDB::Table | [0m[1mNotesTable7100B0E8[22m[0m | [0mResource creation Initiated[0m
+[2022-05-27T11:24:49.202] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T11:24:49.510] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:24:49.513] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:24:54.520] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:24:54.524] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T11:24:54.802] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T11:24:55.094] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:24:55.097] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:24:55.099] [INFO] default - Checking deploy status...
+[2022-05-27T11:25:00.111] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:00.115] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T11:25:00.403] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T11:25:00.720] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:00.724] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:00.726] [INFO] default - Checking deploy status...
+[2022-05-27T11:25:05.743] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:05.747] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T11:25:06.082] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T11:25:06.381] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:06.384] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:06.386] [INFO] default - Checking deploy status...
+[2022-05-27T11:25:11.397] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:11.401] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T11:25:11.688] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T11:25:11.973] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:11.976] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:11.978] [INFO] default - Checking deploy status...
+[2022-05-27T11:25:16.992] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:16.996] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T11:25:17.291] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T11:25:17.606] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:17.610] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:17.612] [INFO] default - Checking deploy status...
+[2022-05-27T11:25:22.625] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:22.629] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T11:25:22.930] [INFO] default - BryanL-notes-StorageStack | [32mCREATE_COMPLETE[39m | AWS::DynamoDB::Table | [32m[1mNotesTable7100B0E8[22m[39m
+[2022-05-27T11:25:22.933] [INFO] default - BryanL-notes-StorageStack | [0mCREATE_IN_PROGRESS[0m | AWS::CDK::Metadata | [0m[1mSSTMetadata[22m[0m
+[2022-05-27T11:25:22.937] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T11:25:23.235] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_COMPLETE-2022-05-27T17:25:19.047Z","timestamp":"2022-05-27T17:25:19.047Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"SSTMetadata-CREATE_IN_PROGRESS-2022-05-27T17:25:21.754Z","timestamp":"2022-05-27T17:25:21.754Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"SSTMetadata"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:23.238] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_COMPLETE-2022-05-27T17:25:19.047Z","timestamp":"2022-05-27T17:25:19.047Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"SSTMetadata-CREATE_IN_PROGRESS-2022-05-27T17:25:21.754Z","timestamp":"2022-05-27T17:25:21.754Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"SSTMetadata"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:28.250] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_COMPLETE-2022-05-27T17:25:19.047Z","timestamp":"2022-05-27T17:25:19.047Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"SSTMetadata-CREATE_IN_PROGRESS-2022-05-27T17:25:21.754Z","timestamp":"2022-05-27T17:25:21.754Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"SSTMetadata"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z"}]
+[2022-05-27T11:25:28.254] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T11:25:28.578] [INFO] default - BryanL-notes-StorageStack | [0mCREATE_IN_PROGRESS[0m | AWS::CDK::Metadata | [0m[1mSSTMetadata[22m[0m | [0mResource creation Initiated[0m
+[2022-05-27T11:25:28.582] [INFO] default - BryanL-notes-StorageStack | [32mCREATE_COMPLETE[39m | AWS::CDK::Metadata | [32m[1mSSTMetadata[22m[39m
+[2022-05-27T11:25:28.585] [INFO] default - BryanL-notes-StorageStack | [32mCREATE_COMPLETE[39m | AWS::CloudFormation::Stack | [32m[1mBryanL-notes-StorageStack[22m[39m
+[2022-05-27T11:25:28.588] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T11:25:28.890] [INFO] default - [32m[39m
+[32m ✅  BryanL-notes-StorageStack[39m
 [32m[39m
-[2022-05-27T09:59:36.329] [DEBUG] default - At least 1 stack successfully deployed, call deployStacks() again
-[2022-05-27T09:59:36.333] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-MyStack","name":"BryanL-notes-MyStack","status":"unchanged","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653667176326,"endedAt":1653667176326,"events":[],"outputs":{},"exports":{}}]
-[2022-05-27T09:59:36.336] [INFO] default - 
-Stack BryanL-notes-MyStack
-[2022-05-27T09:59:36.338] [INFO] default -   Status: no changes
-[2022-05-27T09:59:36.340] [INFO] default - 
-[2022-05-27T09:59:36.650] [INFO] default - 
-[2022-05-27T09:59:36.653] [INFO] default - ==========================
-[2022-05-27T09:59:36.655] [INFO] default -  Starting Live Lambda Dev
-[2022-05-27T09:59:36.657] [INFO] default - ==========================
-[2022-05-27T09:59:36.659] [INFO] default - 
-[2022-05-27T09:59:36.671] [DEBUG] websocket - startWebSocketClient wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
-[2022-05-27T09:59:36.676] [DEBUG] default - Checking port 12557 on host 0.0.0.0
-[2022-05-27T09:59:36.689] [DEBUG] default - Checking port 13557 on host 0.0.0.0
-[2022-05-27T09:59:36.699] [DEBUG] client - Starting runtime server on port: 12557
-[2022-05-27T09:59:37.279] [DEBUG] websocket - WebSocket connection opened
-[2022-05-27T09:59:38.347] [INFO] client - Debug session started. Listening for requests...
-[2022-05-27T09:59:38.352] [DEBUG] client - Client connection id: SytIYdIkIAMCKJw=
-[2022-05-27T10:03:14.720] [INFO] client - [90md71dd328-41ca-4bd1-99d2-33ed7d049e77 REQUEST BryanL-notes-MyStack-apiLambdaGET2D5CB7A7-zJbg14oFcdlw [functions/lambda.handler] invoked[39m
-[2022-05-27T10:03:14.726] [DEBUG] client - Invoking local function...
-[2022-05-27T10:03:14.731] [DEBUG] client - Triggering {
-  id: 'BryanL-notes-MyStack-api-Lambda_GET_-',
-  handler: 'functions/lambda.handler',
-  runtime: 'nodejs16.x',
-  srcPath: 'backend',
-  bundle: { format: 'esm' },
-  root: 'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes'
+[2022-05-27T11:25:28.894] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"succeeded","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"endedAt":1653672328890,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_COMPLETE-2022-05-27T17:25:19.047Z","timestamp":"2022-05-27T17:25:19.047Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"SSTMetadata-CREATE_IN_PROGRESS-2022-05-27T17:25:21.754Z","timestamp":"2022-05-27T17:25:21.754Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"SSTMetadata"},{"eventId":"SSTMetadata-CREATE_IN_PROGRESS-2022-05-27T17:25:23.705Z","timestamp":"2022-05-27T17:25:23.705Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"SSTMetadata"},{"eventId":"SSTMetadata-CREATE_COMPLETE-2022-05-27T17:25:23.877Z","timestamp":"2022-05-27T17:25:23.877Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"SSTMetadata"},{"eventId":"ff39f050-dde1-11ec-9f96-0a1cefdc6e61","timestamp":"2022-05-27T17:25:26.092Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"BryanL-notes-StorageStack"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z","outputs":{},"exports":{}}]
+[2022-05-27T11:25:28.897] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"succeeded","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653672283880,"endedAt":1653672328890,"events":[{"eventId":"e422aaa0-dde1-11ec-a041-0aadcc696eb9","timestamp":"2022-05-27T17:24:40.629Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:46.510Z","timestamp":"2022-05-27T17:24:46.510Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_IN_PROGRESS-2022-05-27T17:24:47.635Z","timestamp":"2022-05-27T17:24:47.635Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"NotesTable7100B0E8-CREATE_COMPLETE-2022-05-27T17:25:19.047Z","timestamp":"2022-05-27T17:25:19.047Z","resourceType":"AWS::DynamoDB::Table","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"NotesTable7100B0E8"},{"eventId":"SSTMetadata-CREATE_IN_PROGRESS-2022-05-27T17:25:21.754Z","timestamp":"2022-05-27T17:25:21.754Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"SSTMetadata"},{"eventId":"SSTMetadata-CREATE_IN_PROGRESS-2022-05-27T17:25:23.705Z","timestamp":"2022-05-27T17:25:23.705Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"SSTMetadata"},{"eventId":"SSTMetadata-CREATE_COMPLETE-2022-05-27T17:25:23.877Z","timestamp":"2022-05-27T17:25:23.877Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"SSTMetadata"},{"eventId":"ff39f050-dde1-11ec-9f96-0a1cefdc6e61","timestamp":"2022-05-27T17:25:26.092Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"BryanL-notes-StorageStack"}],"eventsFirstEventAt":"2022-05-27T17:24:35.629Z","outputs":{},"exports":{}}]
+[2022-05-27T11:25:28.900] [INFO] default - 
+Stack BryanL-notes-StorageStack
+[2022-05-27T11:25:28.904] [INFO] default -   Status: deployed
+[2022-05-27T11:25:28.906] [INFO] default - 
+[2022-05-27T11:25:29.233] [INFO] default - 
+[2022-05-27T11:25:29.236] [INFO] default - ==========================
+[2022-05-27T11:25:29.239] [INFO] default -  Starting Live Lambda Dev
+[2022-05-27T11:25:29.242] [INFO] default - ==========================
+[2022-05-27T11:25:29.244] [INFO] default - 
+[2022-05-27T11:25:29.260] [DEBUG] websocket - startWebSocketClient wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+[2022-05-27T11:25:29.264] [DEBUG] default - Checking port 12557 on host 0.0.0.0
+[2022-05-27T11:25:29.278] [DEBUG] default - Checking port 13557 on host 0.0.0.0
+[2022-05-27T11:25:29.288] [DEBUG] client - Starting runtime server on port: 12557
+[2022-05-27T11:25:29.979] [DEBUG] websocket - WebSocket connection opened
+[2022-05-27T11:25:31.172] [INFO] client - Debug session started. Listening for requests...
+[2022-05-27T11:25:31.175] [DEBUG] client - Client connection id: Sy5tdea2oAMCLNA=
+[2022-05-27T12:36:32.247] [DEBUG] websocket - Websocket connection closed { code: 1001, reason: <Buffer 47 6f 69 6e 67 20 61 77 61 79> }
+[2022-05-27T12:36:32.319] [DEBUG] websocket - Reconnecting to websocket server...
+[2022-05-27T12:36:32.324] [DEBUG] websocket - startWebSocketClient wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+[2022-05-27T12:36:33.040] [DEBUG] websocket - WebSocket connection opened
+[2022-05-27T12:36:34.108] [INFO] client - Debug session started. Listening for requests...
+[2022-05-27T12:36:34.111] [DEBUG] client - Client connection id: SzEHicGloAMCIig=
+[2022-05-27T12:42:53.989] [INFO] client - [90mStacks: Building changes...[39m
+[2022-05-27T12:42:54.004] [DEBUG] default - synth {
+  app: 'node .build/run.mjs',
+  output: '.build/cdk.out',
+  rollback: true,
+  roleArn: undefined,
+  verbose: 0,
+  noColor: false
 }
-[2022-05-27T10:03:14.734] [DEBUG] client - First build...
-[2022-05-27T10:03:14.750] [DEBUG] client - First build finished
-[2022-05-27T10:03:14.753] [DEBUG] client - Spawning {
-  command: 'C:\\Program Files\\nodejs\\node.exe',
-  args: [
-    'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes\\node_modules\\@serverless-stack\\aws-lambda-ric\\bin\\index.js',
-    'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes\\.sst\\artifacts\\BryanL-notes-MyStack-api-Lambda_GET_-\\backend\\functions\\lambda.handler'
-  ],
-  env: { AWS_LAMBDA_NODEJS_USE_ALTERNATIVE_CLIENT_1: 'true' }
+[2022-05-27T12:42:54.016] [INFO] client - [90mStacks: Synthesizing changes...[39m
+[2022-05-27T12:43:00.154] [TRACE] cdk - 
+ReferenceError: Bucket is not defined
+    at EmptyStack.StorageStack (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.build/lib/index.js:9:18)
+    at stack (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/resources/dist/FunctionalStack.js:15:35)
+    at App.stack (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/resources/dist/App.js:284:16)
+    at Module.main (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.build/lib/index.js:32:7)
+    at file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.build/run.mjs:92:16
+
+
+[31mSubprocess exited with error 1[39m
+
+[2022-05-27T12:43:13.654] [INFO] client - [90mStacks: Building changes...[39m
+[2022-05-27T12:43:13.666] [DEBUG] default - synth {
+  app: 'node .build/run.mjs',
+  output: '.build/cdk.out',
+  rollback: true,
+  roleArn: undefined,
+  verbose: 0,
+  noColor: false
 }
-[2022-05-27T10:03:14.830] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
-[2022-05-27T10:03:14.833] [DEBUG] client - Sending next payload d71dd328-41ca-4bd1-99d2-33ed7d049e77 BryanL-notes-MyStack-api-Lambda_GET_- {}
-[2022-05-27T10:03:14.853] [DEBUG] client - Received error for d71dd328-41ca-4bd1-99d2-33ed7d049e77 BryanL-notes-MyStack-api-Lambda_GET_-
-[2022-05-27T10:03:14.856] [DEBUG] client - Response {
-  type: 'failure',
-  error: {
-    errorType: 'TypeError',
-    errorMessage: "Cannot read properties of undefined (reading 'time')",
-    stackTrace: [
-      "TypeError: Cannot read properties of undefined (reading 'time')",
-      '    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)',
-      '    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)',
-      '    at processTicksAndRejections (node:internal/process/task_queues:96:5)'
-    ]
-  }
+[2022-05-27T12:43:13.678] [INFO] client - [90mStacks: Synthesizing changes...[39m
+[2022-05-27T12:43:19.030] [TRACE] cdk - 
+
+[2022-05-27T12:43:19.041] [INFO] client - [36mStacks: There are new infrastructure changes. Press ENTER to redeploy.[39m
+[2022-05-27T12:47:39.656] [INFO] default - [90mDeploying stacks[39m
+[2022-05-27T12:47:39.661] [DEBUG] default - checkInReviewBootstrapStacks
+[2022-05-27T12:47:39.664] [DEBUG] default - checkInReviewBootstrapStackInRegion us-east-1
+[2022-05-27T12:47:40.074] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
+[2022-05-27T12:47:40.077] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
+[2022-05-27T12:47:40.079] [DEBUG] default - deploy stack: started BryanL-notes-StorageStack
+[2022-05-27T12:47:40.080] [DEBUG] default - deploy stack: get pre-deploy status
+[2022-05-27T12:47:40.394] [DEBUG] default - deploy stack: get pre-deploy status: {
+  StackStatus: 'CREATE_COMPLETE',
+  LastUpdatedTime: 2022-05-27T17:24:40.629Z
 }
-[2022-05-27T10:03:14.858] [INFO] client - [90md71dd328-41ca-4bd1-99d2-33ed7d049e77[39m [31mERROR[39m TypeError: Cannot read properties of undefined (reading 'time') 
- TypeError: Cannot read properties of undefined (reading 'time')
-    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)
-    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-[2022-05-27T10:03:14.862] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
-[2022-05-27T10:03:22.191] [INFO] client - [90m975339ed-30a3-48ee-9d4b-941f6740a2e9 REQUEST BryanL-notes-MyStack-apiLambdaGET2D5CB7A7-zJbg14oFcdlw [functions/lambda.handler] invoked[39m
-[2022-05-27T10:03:22.195] [DEBUG] client - Invoking local function...
-[2022-05-27T10:03:22.199] [DEBUG] client - Triggering {
-  id: 'BryanL-notes-MyStack-api-Lambda_GET_-',
-  handler: 'functions/lambda.handler',
-  runtime: 'nodejs16.x',
-  srcPath: 'backend',
-  bundle: { format: 'esm' },
-  root: 'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes'
+[2022-05-27T12:47:40.399] [DEBUG] default - deploy stack: addInUseExports
+[2022-05-27T12:47:40.401] [DEBUG] default - deploy stack: isTemplateChanged
+[2022-05-27T12:47:40.692] [DEBUG] default - Resources:
+  SSTMetadata:
+    Type: AWS::CDK::Metadata
+    Metadata:
+      aws:cdk:path: BryanL-notes-StorageStack/SSTMetadata
+      sst:version: 1.2.10
+      sst:constructs:
+        - id: Notes
+          addr: c81ea39cfd5672e70f96f3178d4ec6254cf6dea5a8
+          stack: BryanL-notes-StorageStack
+          type: Table
+          data:
+            tableName:
+              Ref: NotesTable7100B0E8
+            consumers: []
+  NotesTable7100B0E8:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: noteId
+          KeyType: RANGE
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: noteId
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      TableName: BryanL-notes-Notes
+      Tags:
+        - Key: sst:app
+          Value: notes
+        - Key: sst:stage
+          Value: BryanL
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Metadata:
+      aws:cdk:path: BryanL-notes-StorageStack/Notes/Table/Resource
+Parameters:
+  BootstrapVersion:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /cdk-bootstrap/hnb659fds/version
+    Description: >-
+      Version of the CDK Bootstrap resources in this environment, automatically
+      retrieved from SSM Parameter Store. [cdk:skip]
+Rules:
+  CheckBootstrapVersion:
+    Assertions:
+      - Assert:
+          Fn::Not:
+            - Fn::Contains:
+                - - '1'
+                  - '2'
+                  - '3'
+                  - '4'
+                  - '5'
+                - Ref: BootstrapVersion
+        AssertDescription: >-
+          CDK bootstrap stack version 6 required. Please run 'cdk bootstrap'
+          with a recent version of the CDK CLI.
+
+[2022-05-27T12:47:40.695] [DEBUG] default - Resources:
+  SSTMetadata:
+    Type: AWS::CDK::Metadata
+    Metadata:
+      aws:cdk:path: BryanL-notes-StorageStack/SSTMetadata
+      sst:version: 1.2.10
+      sst:constructs:
+        - id: Uploads
+          addr: c8f741048fd258bfd7b30c55ef3c47f3df8c7a5c64
+          stack: BryanL-notes-StorageStack
+          type: Bucket
+          data:
+            name:
+              Ref: UploadsBucketC4B27CC7
+            notifications: []
+            notificationNames: []
+        - id: Notes
+          addr: c81ea39cfd5672e70f96f3178d4ec6254cf6dea5a8
+          stack: BryanL-notes-StorageStack
+          type: Table
+          data:
+            tableName:
+              Ref: NotesTable7100B0E8
+            consumers: []
+  UploadsBucketC4B27CC7:
+    Type: AWS::S3::Bucket
+    Properties:
+      Tags:
+        - Key: sst:app
+          Value: notes
+        - Key: sst:stage
+          Value: BryanL
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Metadata:
+      aws:cdk:path: BryanL-notes-StorageStack/Uploads/Bucket/Resource
+  NotesTable7100B0E8:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: noteId
+          KeyType: RANGE
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: noteId
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      TableName: BryanL-notes-Notes
+      Tags:
+        - Key: sst:app
+          Value: notes
+        - Key: sst:stage
+          Value: BryanL
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Metadata:
+      aws:cdk:path: BryanL-notes-StorageStack/Notes/Table/Resource
+Parameters:
+  BootstrapVersion:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /cdk-bootstrap/hnb659fds/version
+    Description: >-
+      Version of the CDK Bootstrap resources in this environment, automatically
+      retrieved from SSM Parameter Store. [cdk:skip]
+Rules:
+  CheckBootstrapVersion:
+    Assertions:
+      - Assert:
+          Fn::Not:
+            - Fn::Contains:
+                - - '1'
+                  - '2'
+                  - '3'
+                  - '4'
+                  - '5'
+                - Ref: BootstrapVersion
+        AssertDescription: >-
+          CDK bootstrap stack version 6 required. Please run 'cdk bootstrap'
+          with a recent version of the CDK CLI.
+
+[2022-05-27T12:47:40.697] [DEBUG] default - deploy stack: run cdk deploy
+[2022-05-27T12:47:40.707] [DEBUG] default - deploy stack: poll stack status
+[2022-05-27T12:47:41.020] [DEBUG] default - deploy stack: poll stack status: {
+  StackStatus: 'CREATE_COMPLETE',
+  LastUpdatedTime: 2022-05-27T17:24:40.629Z
 }
-[2022-05-27T10:03:22.201] [DEBUG] client - Sending next payload 975339ed-30a3-48ee-9d4b-941f6740a2e9 BryanL-notes-MyStack-api-Lambda_GET_- {}
-[2022-05-27T10:03:22.207] [DEBUG] client - Received error for 975339ed-30a3-48ee-9d4b-941f6740a2e9 BryanL-notes-MyStack-api-Lambda_GET_-
-[2022-05-27T10:03:22.210] [DEBUG] client - Response {
-  type: 'failure',
-  error: {
-    errorType: 'TypeError',
-    errorMessage: "Cannot read properties of undefined (reading 'time')",
-    stackTrace: [
-      "TypeError: Cannot read properties of undefined (reading 'time')",
-      '    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)',
-      '    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)',
-      '    at processTicksAndRejections (node:internal/process/task_queues:96:5)'
-    ]
-  }
+[2022-05-27T12:47:41.023] [DEBUG] default - deploy stack: poll stack status: unknown
+[2022-05-27T12:47:41.831] [TRACE] default - deploy stack: run cdk deploy: stderr: 
+✨  Synthesis time: 0.01s
+
+
+[2022-05-27T12:47:41.833] [TRACE] default - deploy stack: run cdk deploy: stderr: [1mBryanL-notes-StorageStack[22m: deploying...
+
+[2022-05-27T12:47:42.902] [TRACE] default - deploy stack: run cdk deploy: stderr: [0%] start: Publishing 9e691bf44c8d210885a9de4a72b17c460095c096b86162288f9b5561cd2b5f68:499049105488-us-east-1
+
+[2022-05-27T12:47:44.312] [DEBUG] default - deploy stack: poll stack status: {
+  StackStatus: 'CREATE_COMPLETE',
+  LastUpdatedTime: 2022-05-27T17:24:40.629Z
 }
-[2022-05-27T10:03:22.212] [INFO] client - [90m975339ed-30a3-48ee-9d4b-941f6740a2e9[39m [31mERROR[39m TypeError: Cannot read properties of undefined (reading 'time') 
- TypeError: Cannot read properties of undefined (reading 'time')
-    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)
-    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-[2022-05-27T10:03:22.217] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
-[2022-05-27T10:03:42.321] [INFO] client - [90m5534eeda-9070-4182-9c10-d05880b99294 REQUEST BryanL-notes-MyStack-apiLambdaGET2D5CB7A7-zJbg14oFcdlw [functions/lambda.handler] invoked by API GET /[39m
-[2022-05-27T10:03:42.326] [DEBUG] client - Invoking local function...
-[2022-05-27T10:03:42.329] [DEBUG] client - Triggering {
-  id: 'BryanL-notes-MyStack-api-Lambda_GET_-',
-  handler: 'functions/lambda.handler',
-  runtime: 'nodejs16.x',
-  srcPath: 'backend',
-  bundle: { format: 'esm' },
-  root: 'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes'
+[2022-05-27T12:47:44.315] [DEBUG] default - deploy stack: poll stack status: unknown
+[2022-05-27T12:47:44.432] [TRACE] default - deploy stack: run cdk deploy: stderr: [100%] success: Published 9e691bf44c8d210885a9de4a72b17c460095c096b86162288f9b5561cd2b5f68:499049105488-us-east-1
+
+[2022-05-27T12:47:45.319] [TRACE] default - deploy stack: run cdk deploy: stderr: [1mBryanL-notes-StorageStack[22m: creating CloudFormation changeset...
+
+[2022-05-27T12:47:47.622] [DEBUG] default - deploy stack: poll stack status: {
+  StackStatus: 'CREATE_COMPLETE',
+  LastUpdatedTime: 2022-05-27T17:24:40.629Z
 }
-[2022-05-27T10:03:42.332] [DEBUG] client - Sending next payload 5534eeda-9070-4182-9c10-d05880b99294 BryanL-notes-MyStack-api-Lambda_GET_- {
-  version: '2.0',
-  routeKey: 'GET /',
-  rawPath: '/',
-  rawQueryString: '',
-  headers: {
-    accept: '*/*',
-    'accept-encoding': 'gzip, deflate, br',
-    'accept-language': 'en-US,en;q=0.9',
-    'content-length': '0',
-    host: 'rhemnbnodh.execute-api.us-east-1.amazonaws.com',
-    origin: 'https://console.serverless-stack.com',
-    referer: 'https://console.serverless-stack.com/',
-    'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'cross-site',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36',
-    'x-amzn-trace-id': 'Root=1-6290f65d-76055e2e6589bb0f3b707182',
-    'x-forwarded-for': '67.207.45.187',
-    'x-forwarded-port': '443',
-    'x-forwarded-proto': 'https'
-  },
-  requestContext: {
-    accountId: '499049105488',
-    apiId: 'rhemnbnodh',
-    domainName: 'rhemnbnodh.execute-api.us-east-1.amazonaws.com',
-    domainPrefix: 'rhemnbnodh',
-    http: {
-      method: 'GET',
-      path: '/',
-      protocol: 'HTTP/1.1',
-      sourceIp: '67.207.45.187',
-      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'
-    },
-    requestId: 'SytusjeTIAMEMOw=',
-    routeKey: 'GET /',
-    stage: '$default',
-    time: '27/May/2022:16:03:41 +0000',
-    timeEpoch: 1653667421873
-  },
-  isBase64Encoded: false
+[2022-05-27T12:47:47.626] [DEBUG] default - deploy stack: poll stack status: unknown
+[2022-05-27T12:47:50.933] [DEBUG] default - deploy stack: poll stack status: {
+  StackStatus: 'CREATE_COMPLETE',
+  LastUpdatedTime: 2022-05-27T17:24:40.629Z
 }
-[2022-05-27T10:03:42.336] [DEBUG] client - Received response for 5534eeda-9070-4182-9c10-d05880b99294 BryanL-notes-MyStack-api-Lambda_GET_-
-[2022-05-27T10:03:42.338] [DEBUG] client - Response {
-  type: 'success',
-  data: {
-    statusCode: 200,
-    headers: { 'Content-Type': 'text/plain' },
-    body: 'Hello, World! Your request was received at 27/May/2022:16:03:41 +0000.'
-  }
+[2022-05-27T12:47:50.936] [DEBUG] default - deploy stack: poll stack status: unknown
+[2022-05-27T12:47:54.245] [DEBUG] default - deploy stack: poll stack status: {
+  StackStatus: 'CREATE_COMPLETE',
+  LastUpdatedTime: 2022-05-27T17:24:40.629Z
 }
-[2022-05-27T10:03:42.341] [INFO] client - [90m5534eeda-9070-4182-9c10-d05880b99294 RESPONSE {"statusCode":200,"headers":{"Content-Type":"text/plain"},"body":"Hello, World! Your request was received at 27/May/2022:16:03:41 +0000."}[39m
-[2022-05-27T10:03:42.345] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
-[2022-05-27T10:04:22.377] [INFO] client - [90m51352432-34db-4246-8801-051ce5d416e3 REQUEST BryanL-notes-MyStack-apiLambdaGET2D5CB7A7-zJbg14oFcdlw [functions/lambda.handler] invoked[39m
-[2022-05-27T10:04:22.381] [DEBUG] client - Invoking local function...
-[2022-05-27T10:04:22.385] [DEBUG] client - Triggering {
-  id: 'BryanL-notes-MyStack-api-Lambda_GET_-',
-  handler: 'functions/lambda.handler',
-  runtime: 'nodejs16.x',
-  srcPath: 'backend',
-  bundle: { format: 'esm' },
-  root: 'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes'
+[2022-05-27T12:47:54.249] [DEBUG] default - deploy stack: poll stack status: unknown
+[2022-05-27T12:47:57.561] [DEBUG] default - deploy stack: poll stack status: {
+  StackStatus: 'UPDATE_IN_PROGRESS',
+  LastUpdatedTime: 2022-05-27T18:47:56.553Z
 }
-[2022-05-27T10:04:22.388] [DEBUG] client - Sending next payload 51352432-34db-4246-8801-051ce5d416e3 BryanL-notes-MyStack-api-Lambda_GET_- {}
-[2022-05-27T10:04:22.391] [DEBUG] client - Received error for 51352432-34db-4246-8801-051ce5d416e3 BryanL-notes-MyStack-api-Lambda_GET_-
-[2022-05-27T10:04:22.393] [DEBUG] client - Response {
-  type: 'failure',
-  error: {
-    errorType: 'TypeError',
-    errorMessage: "Cannot read properties of undefined (reading 'time')",
-    stackTrace: [
-      "TypeError: Cannot read properties of undefined (reading 'time')",
-      '    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)',
-      '    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)',
-      '    at processTicksAndRejections (node:internal/process/task_queues:96:5)'
-    ]
-  }
+[2022-05-27T12:47:57.564] [DEBUG] default - deploy stack: poll stack status: cf update started
+[2022-05-27T12:47:57.567] [DEBUG] default - deploy stack: done BryanL-notes-StorageStack {
+  status: 'deploying',
+  statusReason: undefined,
+  account: '499049105488',
+  outputs: {},
+  exports: {}
 }
-[2022-05-27T10:04:22.395] [INFO] client - [90m51352432-34db-4246-8801-051ce5d416e3[39m [31mERROR[39m TypeError: Cannot read properties of undefined (reading 'time') 
- TypeError: Cannot read properties of undefined (reading 'time')
-    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)
-    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-[2022-05-27T10:04:22.398] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
-[2022-05-27T10:04:28.564] [INFO] client - [90me8fdf8a2-e5f4-4fdf-a724-90d40a076922 REQUEST BryanL-notes-MyStack-apiLambdaGET2D5CB7A7-zJbg14oFcdlw [functions/lambda.handler] invoked by API GET /[39m
-[2022-05-27T10:04:28.568] [DEBUG] client - Invoking local function...
-[2022-05-27T10:04:28.571] [DEBUG] client - Triggering {
-  id: 'BryanL-notes-MyStack-api-Lambda_GET_-',
-  handler: 'functions/lambda.handler',
-  runtime: 'nodejs16.x',
-  srcPath: 'backend',
-  bundle: { format: 'esm' },
-  root: 'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes'
-}
-[2022-05-27T10:04:28.575] [DEBUG] client - Sending next payload e8fdf8a2-e5f4-4fdf-a724-90d40a076922 BryanL-notes-MyStack-api-Lambda_GET_- {
-  version: '2.0',
-  routeKey: 'GET /',
-  rawPath: '/',
-  rawQueryString: '',
-  headers: {
-    accept: '*/*',
-    'accept-encoding': 'gzip, deflate, br',
-    'accept-language': 'en-US,en;q=0.9',
-    'content-length': '0',
-    host: 'rhemnbnodh.execute-api.us-east-1.amazonaws.com',
-    origin: 'https://console.serverless-stack.com',
-    referer: 'https://console.serverless-stack.com/',
-    'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'cross-site',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36',
-    'x-amzn-trace-id': 'Root=1-6290f68c-3a001680445b15eb054dc93d',
-    'x-forwarded-for': '67.207.45.187',
-    'x-forwarded-port': '443',
-    'x-forwarded-proto': 'https'
-  },
-  requestContext: {
-    accountId: '499049105488',
-    apiId: 'rhemnbnodh',
-    domainName: 'rhemnbnodh.execute-api.us-east-1.amazonaws.com',
-    domainPrefix: 'rhemnbnodh',
-    http: {
-      method: 'GET',
-      path: '/',
-      protocol: 'HTTP/1.1',
-      sourceIp: '67.207.45.187',
-      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'
-    },
-    requestId: 'Syt17hKKIAMEMaQ=',
-    routeKey: 'GET /',
-    stage: '$default',
-    time: '27/May/2022:16:04:28 +0000',
-    timeEpoch: 1653667468144
-  },
-  isBase64Encoded: false
-}
-[2022-05-27T10:04:28.579] [DEBUG] client - Received response for e8fdf8a2-e5f4-4fdf-a724-90d40a076922 BryanL-notes-MyStack-api-Lambda_GET_-
-[2022-05-27T10:04:28.582] [DEBUG] client - Response {
-  type: 'success',
-  data: {
-    statusCode: 200,
-    headers: { 'Content-Type': 'text/plain' },
-    body: 'Hello, World! Your request was received at 27/May/2022:16:04:28 +0000.'
-  }
-}
-[2022-05-27T10:04:28.583] [INFO] client - [90me8fdf8a2-e5f4-4fdf-a724-90d40a076922 RESPONSE {"statusCode":200,"headers":{"Content-Type":"text/plain"},"body":"Hello, World! Your request was received at 27/May/2022:16:04:28 +0000."}[39m
-[2022-05-27T10:04:28.586] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T12:47:57.570] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[],"outputs":{},"exports":{}}]
+[2022-05-27T12:47:57.572] [INFO] default - Checking deploy status...
+[2022-05-27T12:47:57.592] [DEBUG] default - deploy stack: run cdk deploy: exited with code null
+[2022-05-27T12:48:02.587] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[],"outputs":{},"exports":{}}]
+[2022-05-27T12:48:02.591] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T12:48:02.920] [INFO] default - BryanL-notes-StorageStack | [0mUPDATE_IN_PROGRESS[0m | AWS::CloudFormation::Stack | [0m[1mBryanL-notes-StorageStack[22m[0m | [0mUser Initiated[0m
+[2022-05-27T12:48:02.924] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T12:48:03.236] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:03.239] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:08.242] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:08.245] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T12:48:08.593] [INFO] default - BryanL-notes-StorageStack | [0mCREATE_IN_PROGRESS[0m | AWS::S3::Bucket | [0m[1mUploadsBucketC4B27CC7[22m[0m
+[2022-05-27T12:48:08.597] [INFO] default - BryanL-notes-StorageStack | [0mCREATE_IN_PROGRESS[0m | AWS::S3::Bucket | [0m[1mUploadsBucketC4B27CC7[22m[0m | [0mResource creation Initiated[0m
+[2022-05-27T12:48:08.600] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T12:48:08.887] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:08.890] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:13.895] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:13.899] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T12:48:14.251] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T12:48:14.548] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:14.553] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:14.555] [INFO] default - Checking deploy status...
+[2022-05-27T12:48:19.557] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:19.561] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T12:48:19.857] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T12:48:20.155] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:20.159] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:20.160] [INFO] default - Checking deploy status...
+[2022-05-27T12:48:25.172] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:25.176] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T12:48:25.525] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T12:48:25.848] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:25.852] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:25.853] [INFO] default - Checking deploy status...
+[2022-05-27T12:48:30.868] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"deploying","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z"}]
+[2022-05-27T12:48:30.871] [DEBUG] default - Fetching stack events BryanL-notes-StorageStack
+[2022-05-27T12:48:31.215] [INFO] default - BryanL-notes-StorageStack | [32mCREATE_COMPLETE[39m | AWS::S3::Bucket | [32m[1mUploadsBucketC4B27CC7[22m[39m
+[2022-05-27T12:48:31.219] [INFO] default - BryanL-notes-StorageStack | [32mUPDATE_COMPLETE[39m | AWS::CDK::Metadata | [32m[1mSSTMetadata[22m[39m
+[2022-05-27T12:48:31.221] [INFO] default - BryanL-notes-StorageStack | [32mUPDATE_COMPLETE_CLEANUP_IN_PROGRESS[39m | AWS::CloudFormation::Stack | [32m[1mBryanL-notes-StorageStack[22m[39m
+[2022-05-27T12:48:31.224] [INFO] default - BryanL-notes-StorageStack | [32mUPDATE_COMPLETE[39m | AWS::CloudFormation::Stack | [32m[1mBryanL-notes-StorageStack[22m[39m
+[2022-05-27T12:48:31.228] [DEBUG] default - Checking stack status BryanL-notes-StorageStack
+[2022-05-27T12:48:31.525] [INFO] default - [32m[39m
+[32m ✅  BryanL-notes-StorageStack[39m
+[32m[39m
+[2022-05-27T12:48:31.529] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"succeeded","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"endedAt":1653677311525,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_COMPLETE-2022-05-27T18:48:25.487Z","timestamp":"2022-05-27T18:48:25.487Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"SSTMetadata-UPDATE_COMPLETE-2022-05-27T18:48:27.800Z","timestamp":"2022-05-27T18:48:27.800Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"UPDATE_COMPLETE","logicalResourceId":"SSTMetadata"},{"eventId":"99828c20-dded-11ec-9708-0eb62247d14b","timestamp":"2022-05-27T18:48:29.404Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_COMPLETE_CLEANUP_IN_PROGRESS","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"9a08fa30-dded-11ec-ba5a-0ea6ee858413","timestamp":"2022-05-27T18:48:30.283Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_COMPLETE","logicalResourceId":"BryanL-notes-StorageStack"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z","outputs":{},"exports":{}}]
+[2022-05-27T12:48:31.531] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-StorageStack","name":"BryanL-notes-StorageStack","status":"succeeded","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653677277570,"endedAt":1653677311525,"events":[{"eventId":"85ef6890-dded-11ec-9f68-0a347684ad69","timestamp":"2022-05-27T18:47:56.553Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_IN_PROGRESS","resourceStatusReason":"User Initiated","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:03.684Z","timestamp":"2022-05-27T18:48:03.684Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_IN_PROGRESS-2022-05-27T18:48:04.354Z","timestamp":"2022-05-27T18:48:04.354Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_IN_PROGRESS","resourceStatusReason":"Resource creation Initiated","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"UploadsBucketC4B27CC7-CREATE_COMPLETE-2022-05-27T18:48:25.487Z","timestamp":"2022-05-27T18:48:25.487Z","resourceType":"AWS::S3::Bucket","resourceStatus":"CREATE_COMPLETE","logicalResourceId":"UploadsBucketC4B27CC7"},{"eventId":"SSTMetadata-UPDATE_COMPLETE-2022-05-27T18:48:27.800Z","timestamp":"2022-05-27T18:48:27.800Z","resourceType":"AWS::CDK::Metadata","resourceStatus":"UPDATE_COMPLETE","logicalResourceId":"SSTMetadata"},{"eventId":"99828c20-dded-11ec-9708-0eb62247d14b","timestamp":"2022-05-27T18:48:29.404Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_COMPLETE_CLEANUP_IN_PROGRESS","logicalResourceId":"BryanL-notes-StorageStack"},{"eventId":"9a08fa30-dded-11ec-ba5a-0ea6ee858413","timestamp":"2022-05-27T18:48:30.283Z","resourceType":"AWS::CloudFormation::Stack","resourceStatus":"UPDATE_COMPLETE","logicalResourceId":"BryanL-notes-StorageStack"}],"eventsFirstEventAt":"2022-05-27T18:47:51.553Z","outputs":{},"exports":{}}]
+[2022-05-27T12:48:31.534] [INFO] default - 
+Stack BryanL-notes-StorageStack
+[2022-05-27T12:48:31.538] [INFO] default -   Status: deployed
+[2022-05-27T12:48:31.540] [INFO] default - 
+[2022-05-27T12:48:31.545] [INFO] client - [90mStacks: Deploying completed.[39m
+[2022-05-27T12:53:52.956] [INFO] client - [90mStacks: Deploying completed.[39m
+[2022-05-27T12:53:53.091] [INFO] client - [90mStacks: Deploying completed.[39m
+[2022-05-27T12:53:53.171] [INFO] client - [90mStacks: Deploying completed.[39m
+[2022-05-27T12:53:53.323] [INFO] client - [90mStacks: Deploying completed.[39m
+[2022-05-27T12:53:57.315] [INFO] client - [90mStacks: Deploying completed.[39m
+[2022-05-27T12:53:59.043] [INFO] client - [90mStacks: Deploying completed.[39m
+[2022-05-27T12:53:59.331] [INFO] client - [90mStacks: Deploying completed.[39m
