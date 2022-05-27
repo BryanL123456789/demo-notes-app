@@ -1,7 +1,7 @@
 {
   "version": "18.0.0",
   "files": {
-    "9e691bf44c8d210885a9de4a72b17c460095c096b86162288f9b5561cd2b5f68": {
+    "821dddf5c1e29f00e2b0b1c827e8a9f5e71a4f08be7d5163d65d509271d4f359": {
       "source": {
         "path": "BryanL-notes-StorageStack.template.json",
         "packaging": "file"
@@ -9,7 +9,7 @@
       "destinations": {
         "499049105488-us-east-1": {
           "bucketName": "cdk-hnb659fds-assets-499049105488-us-east-1",
-          "objectKey": "9e691bf44c8d210885a9de4a72b17c460095c096b86162288f9b5561cd2b5f68.json",
+          "objectKey": "821dddf5c1e29f00e2b0b1c827e8a9f5e71a4f08be7d5163d65d509271d4f359.json",
           "region": "us-east-1",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-file-publishing-role-499049105488-us-east-1"
         }

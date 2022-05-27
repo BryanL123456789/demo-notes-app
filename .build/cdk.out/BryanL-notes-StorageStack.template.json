@@ -100,6 +100,27 @@
    }
   }
  },
+ "Outputs": {
+  "ExportsOutputFnGetAttNotesTable7100B0E8Arn5DD5BF38": {
+   "Value": {
+    "Fn::GetAtt": [
+     "NotesTable7100B0E8",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "BryanL-notes-StorageStack:ExportsOutputFnGetAttNotesTable7100B0E8Arn5DD5BF38"
+   }
+  },
+  "ExportsOutputRefNotesTable7100B0E8C879CB95": {
+   "Value": {
+    "Ref": "NotesTable7100B0E8"
+   },
+   "Export": {
+    "Name": "BryanL-notes-StorageStack:ExportsOutputRefNotesTable7100B0E8C879CB95"
+   }
+  }
+ },
  "Parameters": {
   "BootstrapVersion": {
    "Type": "AWS::SSM::Parameter::Value<String>",
