@@ -1,0 +1,143 @@
+{
+  "version": "18.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "BryanL-notes-MyStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "BryanL-notes-MyStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "BryanL-notes-MyStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://499049105488/us-east-1",
+      "properties": {
+        "templateFile": "BryanL-notes-MyStack.template.json",
+        "tags": {
+          "sst:app": "notes",
+          "sst:stage": "BryanL"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-deploy-role-499049105488-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-cfn-exec-role-499049105488-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/196208b6971f5ced3c19de7f8d3815d9086a14850900f1a6dad4664fda17cb4f.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "BryanL-notes-MyStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-lookup-role-499049105488-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "BryanL-notes-MyStack.assets"
+      ],
+      "metadata": {
+        "/BryanL-notes-MyStack": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "sst:app",
+                "Value": "notes"
+              },
+              {
+                "Key": "sst:stage",
+                "Value": "BryanL"
+              }
+            ]
+          }
+        ],
+        "/BryanL-notes-MyStack/SSTMetadata": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SSTMetadata"
+          }
+        ],
+        "/BryanL-notes-MyStack/api/Api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiApiC3C473D0"
+          }
+        ],
+        "/BryanL-notes-MyStack/api/Api/DefaultStage/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiApiDefaultStageA626ED4D"
+          }
+        ],
+        "/BryanL-notes-MyStack/api/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiLogGroup924E5B7A"
+          }
+        ],
+        "/BryanL-notes-MyStack/api/Lambda_GET_--/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiLambdaGETServiceRole57A117D1"
+          }
+        ],
+        "/BryanL-notes-MyStack/api/Lambda_GET_--/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiLambdaGETServiceRoleDefaultPolicyE9384899"
+          }
+        ],
+        "/BryanL-notes-MyStack/api/Lambda_GET_--/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiLambdaGET2D5CB7A7"
+          }
+        ],
+        "/BryanL-notes-MyStack/api/Lambda_GET_--/EventInvokeConfig/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiLambdaGETEventInvokeConfig794FB4BC"
+          }
+        ],
+        "/BryanL-notes-MyStack/api/Route_GET_--/Integration_GET_--/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiRouteGETIntegrationGET451F73F0"
+          }
+        ],
+        "/BryanL-notes-MyStack/api/Route_GET_--/Integration_GET_---Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiRouteGETIntegrationGETPermission02100559"
+          }
+        ],
+        "/BryanL-notes-MyStack/api/Route_GET_--/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "apiRouteGET1A9E87AB"
+          }
+        ],
+        "/BryanL-notes-MyStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/BryanL-notes-MyStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "BryanL-notes-MyStack"
+    }
+  }
+}

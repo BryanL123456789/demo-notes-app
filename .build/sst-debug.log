@@ -1,0 +1,2085 @@
+[2022-05-27T09:59:19.256] [DEBUG] default - SST: 1.2.10
+[2022-05-27T09:59:19.259] [DEBUG] default - CDK: 2.24.0
+[2022-05-27T09:59:19.263] [DEBUG] aws-auth - Determining if we're on an EC2 instance.
+[2022-05-27T09:59:19.331] [DEBUG] aws-auth - Does not look like an EC2 instance.
+[2022-05-27T09:59:19.375] [INFO] default - Using stage: BryanL
+[2022-05-27T09:59:19.379] [INFO] default - [90mPreparing your SST app[39m
+[2022-05-27T09:59:19.416] [INFO] default - 
+[2022-05-27T09:59:19.418] [INFO] default - =======================
+[2022-05-27T09:59:19.420] [INFO] default -  Deploying debug stack
+[2022-05-27T09:59:19.430] [INFO] default - =======================
+[2022-05-27T09:59:19.432] [INFO] default - 
+[2022-05-27T09:59:19.434] [DEBUG] default - synth {
+  app: 'node bin/index.mjs notes BryanL us-east-1 "C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes"',
+  output: 'cdk.out',
+  rollback: true,
+  roleArn: undefined,
+  verbose: 0,
+  noColor: false
+}
+[2022-05-27T09:59:23.471] [TRACE] cdk - 
+
+[2022-05-27T09:59:23.498] [INFO] default - [90mDeploying stacks[39m
+[2022-05-27T09:59:23.501] [DEBUG] default - checkInReviewBootstrapStacks
+[2022-05-27T09:59:23.503] [DEBUG] default - checkInReviewBootstrapStackInRegion us-east-1
+[2022-05-27T09:59:23.876] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-debug-stack","name":"BryanL-notes-debug-stack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
+[2022-05-27T09:59:23.879] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-debug-stack","name":"BryanL-notes-debug-stack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
+[2022-05-27T09:59:23.880] [DEBUG] default - deploy stack: started BryanL-notes-debug-stack
+[2022-05-27T09:59:23.881] [DEBUG] default - deploy stack: get pre-deploy status
+[2022-05-27T09:59:24.168] [DEBUG] default - deploy stack: get pre-deploy status: {
+  StackStatus: 'CREATE_COMPLETE',
+  LastUpdatedTime: 2022-05-27T15:19:38.188Z
+}
+[2022-05-27T09:59:24.171] [DEBUG] default - deploy stack: addInUseExports
+[2022-05-27T09:59:24.175] [DEBUG] default - deploy stack: isTemplateChanged
+[2022-05-27T09:59:24.642] [DEBUG] default - Resources:
+  TableCD117FA1:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Table/Resource
+  Bucket83908E77:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      LifecycleConfiguration:
+        Rules:
+          - ExpirationInDays: 1
+            Prefix: payloads/
+            Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: aws-cdk:auto-delete-objects
+          Value: 'true'
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Bucket/Resource
+  BucketPolicyE9A3008A:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket:
+        Ref: Bucket83908E77
+      PolicyDocument:
+        Statement:
+          - Action:
+              - s3:GetBucket*
+              - s3:List*
+              - s3:DeleteObject*
+            Effect: Allow
+            Principal:
+              AWS:
+                Fn::GetAtt:
+                  - CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092
+                  - Arn
+            Resource:
+              - Fn::GetAtt:
+                  - Bucket83908E77
+                  - Arn
+              - Fn::Join:
+                  - ''
+                  - - Fn::GetAtt:
+                        - Bucket83908E77
+                        - Arn
+                    - /*
+        Version: '2012-10-17'
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Bucket/Policy/Resource
+  BucketAutoDeleteObjectsCustomResourceBAFD23C2:
+    Type: Custom::S3AutoDeleteObjects
+    Properties:
+      ServiceToken:
+        Fn::GetAtt:
+          - CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F
+          - Arn
+      BucketName:
+        Ref: Bucket83908E77
+    DependsOn:
+      - BucketPolicyE9A3008A
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Bucket/AutoDeleteObjectsCustomResource/Default
+  CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+      ManagedPolicyArns:
+        - Fn::Sub: >-
+            arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-debug-stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role
+  CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: 483ae06ed27ef8ca76e011264d772420593a6cfe8544759c306ef3b98c9e25be.zip
+      Timeout: 900
+      MemorySize: 128
+      Handler: __entrypoint__.handler
+      Role:
+        Fn::GetAtt:
+          - CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092
+          - Arn
+      Runtime: nodejs12.x
+      Description:
+        Fn::Join:
+          - ''
+          - - 'Lambda function for auto-deleting objects in '
+            - Ref: Bucket83908E77
+            - ' S3 bucket.'
+    DependsOn:
+      - CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-debug-stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler
+      aws:asset:path: asset.483ae06ed27ef8ca76e011264d772420593a6cfe8544759c306ef3b98c9e25be
+      aws:asset:property: Code
+  Api:
+    Type: AWS::ApiGatewayV2::Api
+    Properties:
+      Name: BryanL-notes-debug-stack-api
+      ProtocolType: WEBSOCKET
+      RouteSelectionExpression: $request.body.action
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Api
+  ApiStage:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId:
+        Ref: Api
+      StageName: BryanL
+      AutoDeploy: true
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/ApiStage
+  ConnectServiceRole07B61CE8:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Connect/ServiceRole/Resource
+  ConnectServiceRoleDefaultPolicyCE008EDB:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - apigateway:*
+              - dynamodb:*
+              - execute-api:ManageConnections
+            Effect: Allow
+            Resource: '*'
+        Version: '2012-10-17'
+      PolicyName: ConnectServiceRoleDefaultPolicyCE008EDB
+      Roles:
+        - Ref: ConnectServiceRole07B61CE8
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Connect/ServiceRole/DefaultPolicy/Resource
+  Connect5B7625CA:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: 0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4.zip
+      Role:
+        Fn::GetAtt:
+          - ConnectServiceRole07B61CE8
+          - Arn
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Ref: TableCD117FA1
+      Handler: wsConnect.main
+      MemorySize: 256
+      Runtime: nodejs12.x
+      Timeout: 10
+    DependsOn:
+      - ConnectServiceRoleDefaultPolicyCE008EDB
+      - ConnectServiceRole07B61CE8
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Connect/Resource
+      aws:asset:path: asset.0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  ConnectLogRetentionC1F463CD:
+    Type: Custom::LogRetention
+    Properties:
+      ServiceToken:
+        Fn::GetAtt:
+          - LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A
+          - Arn
+      LogGroupName:
+        Fn::Join:
+          - ''
+          - - /aws/lambda/
+            - Ref: Connect5B7625CA
+      RetentionInDays: 7
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Connect/LogRetention/Resource
+  ConnectConnectPermission9DBC7813:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - Connect5B7625CA
+          - Arn
+      Principal: apigateway.amazonaws.com
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Connect/ConnectPermission
+  LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-debug-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource
+  LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - logs:PutRetentionPolicy
+              - logs:DeleteRetentionPolicy
+            Effect: Allow
+            Resource: '*'
+        Version: '2012-10-17'
+      PolicyName: >-
+        LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB
+      Roles:
+        - Ref: LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-debug-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource
+  LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs14.x
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: 558dc75fbdc793c8e2f64f85d2d7ed2cb820c727ec7e9b08666ad1af0103992e.zip
+      Role:
+        Fn::GetAtt:
+          - LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB
+          - Arn
+    DependsOn:
+      - >-
+        LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB
+      - LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-debug-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource
+      aws:asset:path: asset.558dc75fbdc793c8e2f64f85d2d7ed2cb820c727ec7e9b08666ad1af0103992e
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  ConnectIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId:
+        Ref: Api
+      IntegrationType: AWS_PROXY
+      IntegrationUri:
+        Fn::Join:
+          - ''
+          - - 'arn:'
+            - Ref: AWS::Partition
+            - ':apigateway:us-east-1:lambda:path/2015-03-31/functions/'
+            - Fn::GetAtt:
+                - Connect5B7625CA
+                - Arn
+            - /invocations
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/ConnectIntegration
+  ConnectRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId:
+        Ref: Api
+      RouteKey: $connect
+      AuthorizationType: NONE
+      Target:
+        Fn::Join:
+          - ''
+          - - integrations/
+            - Ref: ConnectIntegration
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/ConnectRoute
+  DisconnectServiceRole90AEC2EB:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Disconnect/ServiceRole/Resource
+  DisconnectServiceRoleDefaultPolicy32856207:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - apigateway:*
+              - dynamodb:*
+              - execute-api:ManageConnections
+            Effect: Allow
+            Resource: '*'
+        Version: '2012-10-17'
+      PolicyName: DisconnectServiceRoleDefaultPolicy32856207
+      Roles:
+        - Ref: DisconnectServiceRole90AEC2EB
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Disconnect/ServiceRole/DefaultPolicy/Resource
+  Disconnect7D6B12BD:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: 0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4.zip
+      Role:
+        Fn::GetAtt:
+          - DisconnectServiceRole90AEC2EB
+          - Arn
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Ref: TableCD117FA1
+      Handler: wsDisconnect.main
+      MemorySize: 256
+      Runtime: nodejs12.x
+      Timeout: 10
+    DependsOn:
+      - DisconnectServiceRoleDefaultPolicy32856207
+      - DisconnectServiceRole90AEC2EB
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Disconnect/Resource
+      aws:asset:path: asset.0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  DisconnectLogRetentionE61D7937:
+    Type: Custom::LogRetention
+    Properties:
+      ServiceToken:
+        Fn::GetAtt:
+          - LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A
+          - Arn
+      LogGroupName:
+        Fn::Join:
+          - ''
+          - - /aws/lambda/
+            - Ref: Disconnect7D6B12BD
+      RetentionInDays: 7
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Disconnect/LogRetention/Resource
+  DisconnectDisconnectPermission933E876E:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - Disconnect7D6B12BD
+          - Arn
+      Principal: apigateway.amazonaws.com
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Disconnect/DisconnectPermission
+  DisconnectIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId:
+        Ref: Api
+      IntegrationType: AWS_PROXY
+      IntegrationUri:
+        Fn::Join:
+          - ''
+          - - 'arn:'
+            - Ref: AWS::Partition
+            - ':apigateway:us-east-1:lambda:path/2015-03-31/functions/'
+            - Fn::GetAtt:
+                - Disconnect7D6B12BD
+                - Arn
+            - /invocations
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/DisconnectIntegration
+  DisconnectRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId:
+        Ref: Api
+      RouteKey: $disconnect
+      AuthorizationType: NONE
+      Target:
+        Fn::Join:
+          - ''
+          - - integrations/
+            - Ref: DisconnectIntegration
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/DisconnectRoute
+  ServiceRole4288B192:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Default/ServiceRole/Resource
+  ServiceRoleDefaultPolicy94CF55F6:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - apigateway:*
+              - dynamodb:*
+              - execute-api:ManageConnections
+            Effect: Allow
+            Resource: '*'
+        Version: '2012-10-17'
+      PolicyName: ServiceRoleDefaultPolicy94CF55F6
+      Roles:
+        - Ref: ServiceRole4288B192
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Default/ServiceRole/DefaultPolicy/Resource
+  Resource:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: 0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4.zip
+      Role:
+        Fn::GetAtt:
+          - ServiceRole4288B192
+          - Arn
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Ref: TableCD117FA1
+      Handler: wsDefault.main
+      MemorySize: 256
+      Runtime: nodejs12.x
+      Timeout: 10
+    DependsOn:
+      - ServiceRoleDefaultPolicy94CF55F6
+      - ServiceRole4288B192
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Default/Resource
+      aws:asset:path: asset.0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  LogRetentionDD0A1FA1:
+    Type: Custom::LogRetention
+    Properties:
+      ServiceToken:
+        Fn::GetAtt:
+          - LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A
+          - Arn
+      LogGroupName:
+        Fn::Join:
+          - ''
+          - - /aws/lambda/
+            - Ref: Resource
+      RetentionInDays: 7
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Default/LogRetention/Resource
+  DefaultPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - Resource
+          - Arn
+      Principal: apigateway.amazonaws.com
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Default/DefaultPermission
+  DefaultIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId:
+        Ref: Api
+      IntegrationType: AWS_PROXY
+      IntegrationUri:
+        Fn::Join:
+          - ''
+          - - 'arn:'
+            - Ref: AWS::Partition
+            - ':apigateway:us-east-1:lambda:path/2015-03-31/functions/'
+            - Fn::GetAtt:
+                - Resource
+                - Arn
+            - /invocations
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/DefaultIntegration
+  DefaultRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId:
+        Ref: Api
+      RouteKey: $default
+      AuthorizationType: NONE
+      Target:
+        Fn::Join:
+          - ''
+          - - integrations/
+            - Ref: DefaultIntegration
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/DefaultRoute
+Outputs:
+  Endpoint:
+    Value:
+      Fn::Join:
+        - ''
+        - - Fn::GetAtt:
+              - Api
+              - ApiEndpoint
+          - /BryanL
+  BucketArn:
+    Value:
+      Fn::GetAtt:
+        - Bucket83908E77
+        - Arn
+  BucketName:
+    Value:
+      Ref: Bucket83908E77
+Parameters:
+  BootstrapVersion:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /cdk-bootstrap/hnb659fds/version
+    Description: >-
+      Version of the CDK Bootstrap resources in this environment, automatically
+      retrieved from SSM Parameter Store. [cdk:skip]
+Rules:
+  CheckBootstrapVersion:
+    Assertions:
+      - Assert:
+          Fn::Not:
+            - Fn::Contains:
+                - - '1'
+                  - '2'
+                  - '3'
+                  - '4'
+                  - '5'
+                - Ref: BootstrapVersion
+        AssertDescription: >-
+          CDK bootstrap stack version 6 required. Please run 'cdk bootstrap'
+          with a recent version of the CDK CLI.
+
+[2022-05-27T09:59:24.645] [DEBUG] default - Resources:
+  TableCD117FA1:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Table/Resource
+  Bucket83908E77:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      LifecycleConfiguration:
+        Rules:
+          - ExpirationInDays: 1
+            Prefix: payloads/
+            Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: aws-cdk:auto-delete-objects
+          Value: 'true'
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Bucket/Resource
+  BucketPolicyE9A3008A:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket:
+        Ref: Bucket83908E77
+      PolicyDocument:
+        Statement:
+          - Action:
+              - s3:GetBucket*
+              - s3:List*
+              - s3:DeleteObject*
+            Effect: Allow
+            Principal:
+              AWS:
+                Fn::GetAtt:
+                  - CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092
+                  - Arn
+            Resource:
+              - Fn::GetAtt:
+                  - Bucket83908E77
+                  - Arn
+              - Fn::Join:
+                  - ''
+                  - - Fn::GetAtt:
+                        - Bucket83908E77
+                        - Arn
+                    - /*
+        Version: '2012-10-17'
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Bucket/Policy/Resource
+  BucketAutoDeleteObjectsCustomResourceBAFD23C2:
+    Type: Custom::S3AutoDeleteObjects
+    Properties:
+      ServiceToken:
+        Fn::GetAtt:
+          - CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F
+          - Arn
+      BucketName:
+        Ref: Bucket83908E77
+    DependsOn:
+      - BucketPolicyE9A3008A
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Bucket/AutoDeleteObjectsCustomResource/Default
+  CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+      ManagedPolicyArns:
+        - Fn::Sub: >-
+            arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-debug-stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role
+  CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: 483ae06ed27ef8ca76e011264d772420593a6cfe8544759c306ef3b98c9e25be.zip
+      Timeout: 900
+      MemorySize: 128
+      Handler: __entrypoint__.handler
+      Role:
+        Fn::GetAtt:
+          - CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092
+          - Arn
+      Runtime: nodejs12.x
+      Description:
+        Fn::Join:
+          - ''
+          - - 'Lambda function for auto-deleting objects in '
+            - Ref: Bucket83908E77
+            - ' S3 bucket.'
+    DependsOn:
+      - CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-debug-stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler
+      aws:asset:path: asset.483ae06ed27ef8ca76e011264d772420593a6cfe8544759c306ef3b98c9e25be
+      aws:asset:property: Code
+  Api:
+    Type: AWS::ApiGatewayV2::Api
+    Properties:
+      Name: BryanL-notes-debug-stack-api
+      ProtocolType: WEBSOCKET
+      RouteSelectionExpression: $request.body.action
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Api
+  ApiStage:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId:
+        Ref: Api
+      StageName: BryanL
+      AutoDeploy: true
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/ApiStage
+  ConnectServiceRole07B61CE8:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Connect/ServiceRole/Resource
+  ConnectServiceRoleDefaultPolicyCE008EDB:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - apigateway:*
+              - dynamodb:*
+              - execute-api:ManageConnections
+            Effect: Allow
+            Resource: '*'
+        Version: '2012-10-17'
+      PolicyName: ConnectServiceRoleDefaultPolicyCE008EDB
+      Roles:
+        - Ref: ConnectServiceRole07B61CE8
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Connect/ServiceRole/DefaultPolicy/Resource
+  Connect5B7625CA:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: 0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4.zip
+      Role:
+        Fn::GetAtt:
+          - ConnectServiceRole07B61CE8
+          - Arn
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Ref: TableCD117FA1
+      Handler: wsConnect.main
+      MemorySize: 256
+      Runtime: nodejs12.x
+      Timeout: 10
+    DependsOn:
+      - ConnectServiceRoleDefaultPolicyCE008EDB
+      - ConnectServiceRole07B61CE8
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Connect/Resource
+      aws:asset:path: asset.0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  ConnectLogRetentionC1F463CD:
+    Type: Custom::LogRetention
+    Properties:
+      ServiceToken:
+        Fn::GetAtt:
+          - LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A
+          - Arn
+      LogGroupName:
+        Fn::Join:
+          - ''
+          - - /aws/lambda/
+            - Ref: Connect5B7625CA
+      RetentionInDays: 7
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Connect/LogRetention/Resource
+  ConnectConnectPermission9DBC7813:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - Connect5B7625CA
+          - Arn
+      Principal: apigateway.amazonaws.com
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Connect/ConnectPermission
+  LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-debug-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource
+  LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - logs:PutRetentionPolicy
+              - logs:DeleteRetentionPolicy
+            Effect: Allow
+            Resource: '*'
+        Version: '2012-10-17'
+      PolicyName: >-
+        LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB
+      Roles:
+        - Ref: LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-debug-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource
+  LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs14.x
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: 558dc75fbdc793c8e2f64f85d2d7ed2cb820c727ec7e9b08666ad1af0103992e.zip
+      Role:
+        Fn::GetAtt:
+          - LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB
+          - Arn
+    DependsOn:
+      - >-
+        LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB
+      - LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-debug-stack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource
+      aws:asset:path: asset.558dc75fbdc793c8e2f64f85d2d7ed2cb820c727ec7e9b08666ad1af0103992e
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  ConnectIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId:
+        Ref: Api
+      IntegrationType: AWS_PROXY
+      IntegrationUri:
+        Fn::Join:
+          - ''
+          - - 'arn:'
+            - Ref: AWS::Partition
+            - ':apigateway:us-east-1:lambda:path/2015-03-31/functions/'
+            - Fn::GetAtt:
+                - Connect5B7625CA
+                - Arn
+            - /invocations
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/ConnectIntegration
+  ConnectRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId:
+        Ref: Api
+      RouteKey: $connect
+      AuthorizationType: NONE
+      Target:
+        Fn::Join:
+          - ''
+          - - integrations/
+            - Ref: ConnectIntegration
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/ConnectRoute
+  DisconnectServiceRole90AEC2EB:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Disconnect/ServiceRole/Resource
+  DisconnectServiceRoleDefaultPolicy32856207:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - apigateway:*
+              - dynamodb:*
+              - execute-api:ManageConnections
+            Effect: Allow
+            Resource: '*'
+        Version: '2012-10-17'
+      PolicyName: DisconnectServiceRoleDefaultPolicy32856207
+      Roles:
+        - Ref: DisconnectServiceRole90AEC2EB
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Disconnect/ServiceRole/DefaultPolicy/Resource
+  Disconnect7D6B12BD:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: 0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4.zip
+      Role:
+        Fn::GetAtt:
+          - DisconnectServiceRole90AEC2EB
+          - Arn
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Ref: TableCD117FA1
+      Handler: wsDisconnect.main
+      MemorySize: 256
+      Runtime: nodejs12.x
+      Timeout: 10
+    DependsOn:
+      - DisconnectServiceRoleDefaultPolicy32856207
+      - DisconnectServiceRole90AEC2EB
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Disconnect/Resource
+      aws:asset:path: asset.0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  DisconnectLogRetentionE61D7937:
+    Type: Custom::LogRetention
+    Properties:
+      ServiceToken:
+        Fn::GetAtt:
+          - LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A
+          - Arn
+      LogGroupName:
+        Fn::Join:
+          - ''
+          - - /aws/lambda/
+            - Ref: Disconnect7D6B12BD
+      RetentionInDays: 7
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Disconnect/LogRetention/Resource
+  DisconnectDisconnectPermission933E876E:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - Disconnect7D6B12BD
+          - Arn
+      Principal: apigateway.amazonaws.com
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Disconnect/DisconnectPermission
+  DisconnectIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId:
+        Ref: Api
+      IntegrationType: AWS_PROXY
+      IntegrationUri:
+        Fn::Join:
+          - ''
+          - - 'arn:'
+            - Ref: AWS::Partition
+            - ':apigateway:us-east-1:lambda:path/2015-03-31/functions/'
+            - Fn::GetAtt:
+                - Disconnect7D6B12BD
+                - Arn
+            - /invocations
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/DisconnectIntegration
+  DisconnectRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId:
+        Ref: Api
+      RouteKey: $disconnect
+      AuthorizationType: NONE
+      Target:
+        Fn::Join:
+          - ''
+          - - integrations/
+            - Ref: DisconnectIntegration
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/DisconnectRoute
+  ServiceRole4288B192:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Default/ServiceRole/Resource
+  ServiceRoleDefaultPolicy94CF55F6:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - apigateway:*
+              - dynamodb:*
+              - execute-api:ManageConnections
+            Effect: Allow
+            Resource: '*'
+        Version: '2012-10-17'
+      PolicyName: ServiceRoleDefaultPolicy94CF55F6
+      Roles:
+        - Ref: ServiceRole4288B192
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Default/ServiceRole/DefaultPolicy/Resource
+  Resource:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: 0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4.zip
+      Role:
+        Fn::GetAtt:
+          - ServiceRole4288B192
+          - Arn
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Ref: TableCD117FA1
+      Handler: wsDefault.main
+      MemorySize: 256
+      Runtime: nodejs12.x
+      Timeout: 10
+    DependsOn:
+      - ServiceRoleDefaultPolicy94CF55F6
+      - ServiceRole4288B192
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Default/Resource
+      aws:asset:path: asset.0d89df84ea307d9cb0d70fbd76481e4e86f449d075a2a082cc2d323ee69a98e4
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  LogRetentionDD0A1FA1:
+    Type: Custom::LogRetention
+    Properties:
+      ServiceToken:
+        Fn::GetAtt:
+          - LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A
+          - Arn
+      LogGroupName:
+        Fn::Join:
+          - ''
+          - - /aws/lambda/
+            - Ref: Resource
+      RetentionInDays: 7
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Default/LogRetention/Resource
+  DefaultPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - Resource
+          - Arn
+      Principal: apigateway.amazonaws.com
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/Default/DefaultPermission
+  DefaultIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId:
+        Ref: Api
+      IntegrationType: AWS_PROXY
+      IntegrationUri:
+        Fn::Join:
+          - ''
+          - - 'arn:'
+            - Ref: AWS::Partition
+            - ':apigateway:us-east-1:lambda:path/2015-03-31/functions/'
+            - Fn::GetAtt:
+                - Resource
+                - Arn
+            - /invocations
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/DefaultIntegration
+  DefaultRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId:
+        Ref: Api
+      RouteKey: $default
+      AuthorizationType: NONE
+      Target:
+        Fn::Join:
+          - ''
+          - - integrations/
+            - Ref: DefaultIntegration
+    Metadata:
+      aws:cdk:path: BryanL-notes-debug-stack/DefaultRoute
+Outputs:
+  Endpoint:
+    Value:
+      Fn::Join:
+        - ''
+        - - Fn::GetAtt:
+              - Api
+              - ApiEndpoint
+          - /BryanL
+  BucketArn:
+    Value:
+      Fn::GetAtt:
+        - Bucket83908E77
+        - Arn
+  BucketName:
+    Value:
+      Ref: Bucket83908E77
+Parameters:
+  BootstrapVersion:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /cdk-bootstrap/hnb659fds/version
+    Description: >-
+      Version of the CDK Bootstrap resources in this environment, automatically
+      retrieved from SSM Parameter Store. [cdk:skip]
+Rules:
+  CheckBootstrapVersion:
+    Assertions:
+      - Assert:
+          Fn::Not:
+            - Fn::Contains:
+                - - '1'
+                  - '2'
+                  - '3'
+                  - '4'
+                  - '5'
+                - Ref: BootstrapVersion
+        AssertDescription: >-
+          CDK bootstrap stack version 6 required. Please run 'cdk bootstrap'
+          with a recent version of the CDK CLI.
+
+[2022-05-27T09:59:24.647] [DEBUG] default - deploy stack: isTemplateChanged: unchanged
+[2022-05-27T09:59:24.648] [DEBUG] default - deploy stack: done BryanL-notes-debug-stack {
+  status: 'unchanged',
+  statusReason: undefined,
+  account: '499049105488',
+  outputs: {
+    BucketArn: 'arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs',
+    BucketName: 'bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs',
+    Endpoint: 'wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL'
+  },
+  exports: {}
+}
+[2022-05-27T09:59:24.650] [INFO] default - [32m[39m
+[32m ✅  BryanL-notes-debug-stack (no changes)[39m
+[32m[39m
+[2022-05-27T09:59:24.652] [DEBUG] default - At least 1 stack successfully deployed, call deployStacks() again
+[2022-05-27T09:59:24.655] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-debug-stack","name":"BryanL-notes-debug-stack","status":"unchanged","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653667164650,"endedAt":1653667164650,"events":[],"outputs":{"BucketArn":"arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs","BucketName":"bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs","Endpoint":"wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL"},"exports":{}}]
+[2022-05-27T09:59:24.657] [INFO] default - 
+Stack BryanL-notes-debug-stack
+[2022-05-27T09:59:24.659] [INFO] default -   Status: no changes
+[2022-05-27T09:59:24.661] [INFO] default -   Outputs:
+[2022-05-27T09:59:24.663] [INFO] default -     BucketArn: arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+[2022-05-27T09:59:24.665] [INFO] default -     BucketName: bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+[2022-05-27T09:59:24.668] [INFO] default -     Endpoint: wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL
+[2022-05-27T09:59:24.671] [INFO] default - 
+[2022-05-27T09:59:24.674] [DEBUG] default - deployRet [
+  {
+    id: 'BryanL-notes-debug-stack',
+    name: 'BryanL-notes-debug-stack',
+    region: 'us-east-1',
+    status: 'unchanged',
+    errorMessage: undefined,
+    outputs: {
+      BucketArn: 'arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs',
+      BucketName: 'bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs',
+      Endpoint: 'wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL'
+    },
+    exports: {}
+  }
+]
+[2022-05-27T09:59:24.676] [INFO] default - 
+[2022-05-27T09:59:24.678] [INFO] default - ===============
+[2022-05-27T09:59:24.680] [INFO] default -  Deploying app
+[2022-05-27T09:59:24.681] [INFO] default - ===============
+[2022-05-27T09:59:24.683] [INFO] default - 
+[2022-05-27T09:59:24.688] [DEBUG] default - synth {
+  app: 'node .build/run.mjs',
+  output: '.build/cdk.out',
+  rollback: true,
+  roleArn: undefined,
+  verbose: 0,
+  noColor: false
+}
+[2022-05-27T09:59:28.722] [TRACE] cdk - 
+
+[2022-05-27T09:59:35.407] [INFO] default - [90mDeploying stacks[39m
+[2022-05-27T09:59:35.414] [DEBUG] default - checkInReviewBootstrapStacks
+[2022-05-27T09:59:35.419] [DEBUG] default - checkInReviewBootstrapStackInRegion us-east-1
+[2022-05-27T09:59:35.731] [TRACE] default - Initial stack states: [{"id":"BryanL-notes-MyStack","name":"BryanL-notes-MyStack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
+[2022-05-27T09:59:35.734] [TRACE] default - After update deploy statuses: [{"id":"BryanL-notes-MyStack","name":"BryanL-notes-MyStack","status":"pending","dependencies":[],"region":"us-east-1","events":[]}]
+[2022-05-27T09:59:35.736] [DEBUG] default - deploy stack: started BryanL-notes-MyStack
+[2022-05-27T09:59:35.738] [DEBUG] default - deploy stack: get pre-deploy status
+[2022-05-27T09:59:36.025] [DEBUG] default - deploy stack: get pre-deploy status: {
+  StackStatus: 'CREATE_COMPLETE',
+  LastUpdatedTime: 2022-05-27T15:21:30.995Z
+}
+[2022-05-27T09:59:36.029] [DEBUG] default - deploy stack: addInUseExports
+[2022-05-27T09:59:36.033] [DEBUG] default - deploy stack: isTemplateChanged
+[2022-05-27T09:59:36.317] [DEBUG] default - Resources:
+  SSTMetadata:
+    Type: AWS::CDK::Metadata
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/SSTMetadata
+      sst:version: 1.2.10
+      sst:constructs:
+        - id: api
+          addr: c8d2c46a9de94e091c69797cd1d85f4bb5c22f3430
+          stack: BryanL-notes-MyStack
+          type: Api
+          data:
+            graphql: false
+            url:
+              Fn::Join:
+                - ''
+                - - https://
+                  - Ref: apiApiC3C473D0
+                  - .execute-api.us-east-1.
+                  - Ref: AWS::URLSuffix
+                  - /
+            httpApiId:
+              Ref: apiApiC3C473D0
+            routes:
+              - type: function
+                route: GET /
+                fn:
+                  node: c8e80d242fd2887f5dd29acd7aa640d57dbba3bc02
+                  stack: BryanL-notes-MyStack
+        - id: Lambda_GET_--
+          addr: c8e80d242fd2887f5dd29acd7aa640d57dbba3bc02
+          stack: BryanL-notes-MyStack
+          type: Function
+          data:
+            localId: BryanL-notes-MyStack-api-Lambda_GET_-
+            arn:
+              Fn::GetAtt:
+                - apiLambdaGET2D5CB7A7
+                - Arn
+  apiApiC3C473D0:
+    Type: AWS::ApiGatewayV2::Api
+    Properties:
+      CorsConfiguration:
+        AllowHeaders:
+          - '*'
+        AllowMethods:
+          - '*'
+        AllowOrigins:
+          - '*'
+      Name: BryanL-notes-api
+      ProtocolType: HTTP
+      Tags:
+        sst:app: notes
+        sst:stage: BryanL
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Api/Resource
+  apiApiDefaultStageA626ED4D:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId:
+        Ref: apiApiC3C473D0
+      StageName: $default
+      AccessLogSettings:
+        DestinationArn:
+          Fn::GetAtt:
+            - apiLogGroup924E5B7A
+            - Arn
+        Format: >-
+          {"requestTime":"$context.requestTime","requestId":"$context.requestId","httpMethod":"$context.httpMethod","path":"$context.path","routeKey":"$context.routeKey","status":$context.status,"responseLatency":$context.responseLatency,"integrationRequestId":"$context.integration.requestId","integrationStatus":"$context.integration.status","integrationLatency":"$context.integration.latency","integrationServiceStatus":"$context.integration.integrationStatus","ip":"$context.identity.sourceIp","userAgent":"$context.identity.userAgent","cognitoIdentityId":"$context.identity.cognitoIdentityId"}
+      AutoDeploy: true
+      Tags:
+        sst:app: notes
+        sst:stage: BryanL
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Api/DefaultStage/Resource
+  apiLogGroup924E5B7A:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Join:
+          - ''
+          - - /aws/vendedlogs/apis/BryanL-notes-api-
+            - Ref: apiApiC3C473D0
+            - /default
+      Tags:
+        - Key: sst:app
+          Value: notes
+        - Key: sst:stage
+          Value: BryanL
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/LogGroup/Resource
+  apiLambdaGETServiceRole57A117D1:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+      Tags:
+        - Key: sst:app
+          Value: notes
+        - Key: sst:stage
+          Value: BryanL
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/ServiceRole/Resource
+  apiLambdaGETServiceRoleDefaultPolicyE9384899:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - xray:PutTraceSegments
+              - xray:PutTelemetryRecords
+            Effect: Allow
+            Resource: '*'
+          - Action: s3:*
+            Effect: Allow
+            Resource:
+              - >-
+                arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+              - >-
+                arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs/*
+        Version: '2012-10-17'
+      PolicyName: apiLambdaGETServiceRoleDefaultPolicyE9384899
+      Roles:
+        - Ref: apiLambdaGETServiceRole57A117D1
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-MyStack/api/Lambda_GET_--/ServiceRole/DefaultPolicy/Resource
+  apiLambdaGET2D5CB7A7:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: a9565a424c73ec5adc8374c8aca92e3582b9caa2019c3c1578306b21ac524b33.zip
+      Role:
+        Fn::GetAtt:
+          - apiLambdaGETServiceRole57A117D1
+          - Arn
+      Environment:
+        Variables:
+          SST_DEBUG_SRC_PATH: backend
+          SST_DEBUG_SRC_HANDLER: functions/lambda.handler
+          SST_DEBUG_ENDPOINT: wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL
+          SST_DEBUG_BUCKET_NAME: bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+          SST_FUNCTION_ID: BryanL-notes-MyStack-api-Lambda_GET_-
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+          SST_DEBUG_IS_API_ROUTE: '1'
+      EphemeralStorage:
+        Size: 512
+      Handler: index.main
+      MemorySize: 1024
+      Runtime: nodejs16.x
+      Tags:
+        - Key: sst:app
+          Value: notes
+        - Key: sst:stage
+          Value: BryanL
+      Timeout: 10
+      TracingConfig:
+        Mode: Active
+    DependsOn:
+      - apiLambdaGETServiceRoleDefaultPolicyE9384899
+      - apiLambdaGETServiceRole57A117D1
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/Resource
+      aws:asset:path: >-
+        asset.a9565a424c73ec5adc8374c8aca92e3582b9caa2019c3c1578306b21ac524b33.zip
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  apiLambdaGETEventInvokeConfig794FB4BC:
+    Type: AWS::Lambda::EventInvokeConfig
+    Properties:
+      FunctionName:
+        Ref: apiLambdaGET2D5CB7A7
+      Qualifier: $LATEST
+      MaximumRetryAttempts: 0
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/EventInvokeConfig/Resource
+  apiRouteGETIntegrationGET451F73F0:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId:
+        Ref: apiApiC3C473D0
+      IntegrationType: AWS_PROXY
+      IntegrationUri:
+        Fn::GetAtt:
+          - apiLambdaGET2D5CB7A7
+          - Arn
+      PayloadFormatVersion: '2.0'
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Integration_GET_--/Resource
+  apiRouteGETIntegrationGETPermission02100559:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - apiLambdaGET2D5CB7A7
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ''
+          - - 'arn:'
+            - Ref: AWS::Partition
+            - ':execute-api:us-east-1:499049105488:'
+            - Ref: apiApiC3C473D0
+            - /*/*/
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Integration_GET_---Permission
+  apiRouteGET1A9E87AB:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId:
+        Ref: apiApiC3C473D0
+      RouteKey: GET /
+      AuthorizationType: NONE
+      Target:
+        Fn::Join:
+          - ''
+          - - integrations/
+            - Ref: apiRouteGETIntegrationGET451F73F0
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Resource
+Parameters:
+  BootstrapVersion:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /cdk-bootstrap/hnb659fds/version
+    Description: >-
+      Version of the CDK Bootstrap resources in this environment, automatically
+      retrieved from SSM Parameter Store. [cdk:skip]
+Rules:
+  CheckBootstrapVersion:
+    Assertions:
+      - Assert:
+          Fn::Not:
+            - Fn::Contains:
+                - - '1'
+                  - '2'
+                  - '3'
+                  - '4'
+                  - '5'
+                - Ref: BootstrapVersion
+        AssertDescription: >-
+          CDK bootstrap stack version 6 required. Please run 'cdk bootstrap'
+          with a recent version of the CDK CLI.
+
+[2022-05-27T09:59:36.321] [DEBUG] default - Resources:
+  SSTMetadata:
+    Type: AWS::CDK::Metadata
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/SSTMetadata
+      sst:version: 1.2.10
+      sst:constructs:
+        - id: api
+          addr: c8d2c46a9de94e091c69797cd1d85f4bb5c22f3430
+          stack: BryanL-notes-MyStack
+          type: Api
+          data:
+            graphql: false
+            url:
+              Fn::Join:
+                - ''
+                - - https://
+                  - Ref: apiApiC3C473D0
+                  - .execute-api.us-east-1.
+                  - Ref: AWS::URLSuffix
+                  - /
+            httpApiId:
+              Ref: apiApiC3C473D0
+            routes:
+              - type: function
+                route: GET /
+                fn:
+                  node: c8e80d242fd2887f5dd29acd7aa640d57dbba3bc02
+                  stack: BryanL-notes-MyStack
+        - id: Lambda_GET_--
+          addr: c8e80d242fd2887f5dd29acd7aa640d57dbba3bc02
+          stack: BryanL-notes-MyStack
+          type: Function
+          data:
+            localId: BryanL-notes-MyStack-api-Lambda_GET_-
+            arn:
+              Fn::GetAtt:
+                - apiLambdaGET2D5CB7A7
+                - Arn
+  apiApiC3C473D0:
+    Type: AWS::ApiGatewayV2::Api
+    Properties:
+      CorsConfiguration:
+        AllowHeaders:
+          - '*'
+        AllowMethods:
+          - '*'
+        AllowOrigins:
+          - '*'
+      Name: BryanL-notes-api
+      ProtocolType: HTTP
+      Tags:
+        sst:app: notes
+        sst:stage: BryanL
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Api/Resource
+  apiApiDefaultStageA626ED4D:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId:
+        Ref: apiApiC3C473D0
+      StageName: $default
+      AccessLogSettings:
+        DestinationArn:
+          Fn::GetAtt:
+            - apiLogGroup924E5B7A
+            - Arn
+        Format: >-
+          {"requestTime":"$context.requestTime","requestId":"$context.requestId","httpMethod":"$context.httpMethod","path":"$context.path","routeKey":"$context.routeKey","status":$context.status,"responseLatency":$context.responseLatency,"integrationRequestId":"$context.integration.requestId","integrationStatus":"$context.integration.status","integrationLatency":"$context.integration.latency","integrationServiceStatus":"$context.integration.integrationStatus","ip":"$context.identity.sourceIp","userAgent":"$context.identity.userAgent","cognitoIdentityId":"$context.identity.cognitoIdentityId"}
+      AutoDeploy: true
+      Tags:
+        sst:app: notes
+        sst:stage: BryanL
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Api/DefaultStage/Resource
+  apiLogGroup924E5B7A:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Join:
+          - ''
+          - - /aws/vendedlogs/apis/BryanL-notes-api-
+            - Ref: apiApiC3C473D0
+            - /default
+      Tags:
+        - Key: sst:app
+          Value: notes
+        - Key: sst:stage
+          Value: BryanL
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/LogGroup/Resource
+  apiLambdaGETServiceRole57A117D1:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ':iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+      Tags:
+        - Key: sst:app
+          Value: notes
+        - Key: sst:stage
+          Value: BryanL
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/ServiceRole/Resource
+  apiLambdaGETServiceRoleDefaultPolicyE9384899:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - xray:PutTraceSegments
+              - xray:PutTelemetryRecords
+            Effect: Allow
+            Resource: '*'
+          - Action: s3:*
+            Effect: Allow
+            Resource:
+              - >-
+                arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+              - >-
+                arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs/*
+        Version: '2012-10-17'
+      PolicyName: apiLambdaGETServiceRoleDefaultPolicyE9384899
+      Roles:
+        - Ref: apiLambdaGETServiceRole57A117D1
+    Metadata:
+      aws:cdk:path: >-
+        BryanL-notes-MyStack/api/Lambda_GET_--/ServiceRole/DefaultPolicy/Resource
+  apiLambdaGET2D5CB7A7:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: cdk-hnb659fds-assets-499049105488-us-east-1
+        S3Key: a9565a424c73ec5adc8374c8aca92e3582b9caa2019c3c1578306b21ac524b33.zip
+      Role:
+        Fn::GetAtt:
+          - apiLambdaGETServiceRole57A117D1
+          - Arn
+      Environment:
+        Variables:
+          SST_DEBUG_SRC_PATH: backend
+          SST_DEBUG_SRC_HANDLER: functions/lambda.handler
+          SST_DEBUG_ENDPOINT: wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL
+          SST_DEBUG_BUCKET_NAME: bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+          SST_FUNCTION_ID: BryanL-notes-MyStack-api-Lambda_GET_-
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+          SST_DEBUG_IS_API_ROUTE: '1'
+      EphemeralStorage:
+        Size: 512
+      Handler: index.main
+      MemorySize: 1024
+      Runtime: nodejs16.x
+      Tags:
+        - Key: sst:app
+          Value: notes
+        - Key: sst:stage
+          Value: BryanL
+      Timeout: 10
+      TracingConfig:
+        Mode: Active
+    DependsOn:
+      - apiLambdaGETServiceRoleDefaultPolicyE9384899
+      - apiLambdaGETServiceRole57A117D1
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/Resource
+      aws:asset:path: >-
+        asset.a9565a424c73ec5adc8374c8aca92e3582b9caa2019c3c1578306b21ac524b33.zip
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  apiLambdaGETEventInvokeConfig794FB4BC:
+    Type: AWS::Lambda::EventInvokeConfig
+    Properties:
+      FunctionName:
+        Ref: apiLambdaGET2D5CB7A7
+      Qualifier: $LATEST
+      MaximumRetryAttempts: 0
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Lambda_GET_--/EventInvokeConfig/Resource
+  apiRouteGETIntegrationGET451F73F0:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId:
+        Ref: apiApiC3C473D0
+      IntegrationType: AWS_PROXY
+      IntegrationUri:
+        Fn::GetAtt:
+          - apiLambdaGET2D5CB7A7
+          - Arn
+      PayloadFormatVersion: '2.0'
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Integration_GET_--/Resource
+  apiRouteGETIntegrationGETPermission02100559:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - apiLambdaGET2D5CB7A7
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ''
+          - - 'arn:'
+            - Ref: AWS::Partition
+            - ':execute-api:us-east-1:499049105488:'
+            - Ref: apiApiC3C473D0
+            - /*/*/
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Integration_GET_---Permission
+  apiRouteGET1A9E87AB:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId:
+        Ref: apiApiC3C473D0
+      RouteKey: GET /
+      AuthorizationType: NONE
+      Target:
+        Fn::Join:
+          - ''
+          - - integrations/
+            - Ref: apiRouteGETIntegrationGET451F73F0
+    Metadata:
+      aws:cdk:path: BryanL-notes-MyStack/api/Route_GET_--/Resource
+Parameters:
+  BootstrapVersion:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /cdk-bootstrap/hnb659fds/version
+    Description: >-
+      Version of the CDK Bootstrap resources in this environment, automatically
+      retrieved from SSM Parameter Store. [cdk:skip]
+Rules:
+  CheckBootstrapVersion:
+    Assertions:
+      - Assert:
+          Fn::Not:
+            - Fn::Contains:
+                - - '1'
+                  - '2'
+                  - '3'
+                  - '4'
+                  - '5'
+                - Ref: BootstrapVersion
+        AssertDescription: >-
+          CDK bootstrap stack version 6 required. Please run 'cdk bootstrap'
+          with a recent version of the CDK CLI.
+
+[2022-05-27T09:59:36.323] [DEBUG] default - deploy stack: isTemplateChanged: unchanged
+[2022-05-27T09:59:36.325] [DEBUG] default - deploy stack: done BryanL-notes-MyStack {
+  status: 'unchanged',
+  statusReason: undefined,
+  account: '499049105488',
+  outputs: {},
+  exports: {}
+}
+[2022-05-27T09:59:36.326] [INFO] default - [32m[39m
+[32m ✅  BryanL-notes-MyStack (no changes)[39m
+[32m[39m
+[2022-05-27T09:59:36.329] [DEBUG] default - At least 1 stack successfully deployed, call deployStacks() again
+[2022-05-27T09:59:36.333] [TRACE] default - After deploy stacks: [{"id":"BryanL-notes-MyStack","name":"BryanL-notes-MyStack","status":"unchanged","dependencies":[],"account":"499049105488","region":"us-east-1","startedAt":1653667176326,"endedAt":1653667176326,"events":[],"outputs":{},"exports":{}}]
+[2022-05-27T09:59:36.336] [INFO] default - 
+Stack BryanL-notes-MyStack
+[2022-05-27T09:59:36.338] [INFO] default -   Status: no changes
+[2022-05-27T09:59:36.340] [INFO] default - 
+[2022-05-27T09:59:36.650] [INFO] default - 
+[2022-05-27T09:59:36.653] [INFO] default - ==========================
+[2022-05-27T09:59:36.655] [INFO] default -  Starting Live Lambda Dev
+[2022-05-27T09:59:36.657] [INFO] default - ==========================
+[2022-05-27T09:59:36.659] [INFO] default - 
+[2022-05-27T09:59:36.671] [DEBUG] websocket - startWebSocketClient wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs
+[2022-05-27T09:59:36.676] [DEBUG] default - Checking port 12557 on host 0.0.0.0
+[2022-05-27T09:59:36.689] [DEBUG] default - Checking port 13557 on host 0.0.0.0
+[2022-05-27T09:59:36.699] [DEBUG] client - Starting runtime server on port: 12557
+[2022-05-27T09:59:37.279] [DEBUG] websocket - WebSocket connection opened
+[2022-05-27T09:59:38.347] [INFO] client - Debug session started. Listening for requests...
+[2022-05-27T09:59:38.352] [DEBUG] client - Client connection id: SytIYdIkIAMCKJw=
+[2022-05-27T10:03:14.720] [INFO] client - [90md71dd328-41ca-4bd1-99d2-33ed7d049e77 REQUEST BryanL-notes-MyStack-apiLambdaGET2D5CB7A7-zJbg14oFcdlw [functions/lambda.handler] invoked[39m
+[2022-05-27T10:03:14.726] [DEBUG] client - Invoking local function...
+[2022-05-27T10:03:14.731] [DEBUG] client - Triggering {
+  id: 'BryanL-notes-MyStack-api-Lambda_GET_-',
+  handler: 'functions/lambda.handler',
+  runtime: 'nodejs16.x',
+  srcPath: 'backend',
+  bundle: { format: 'esm' },
+  root: 'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes'
+}
+[2022-05-27T10:03:14.734] [DEBUG] client - First build...
+[2022-05-27T10:03:14.750] [DEBUG] client - First build finished
+[2022-05-27T10:03:14.753] [DEBUG] client - Spawning {
+  command: 'C:\\Program Files\\nodejs\\node.exe',
+  args: [
+    'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes\\node_modules\\@serverless-stack\\aws-lambda-ric\\bin\\index.js',
+    'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes\\.sst\\artifacts\\BryanL-notes-MyStack-api-Lambda_GET_-\\backend\\functions\\lambda.handler'
+  ],
+  env: { AWS_LAMBDA_NODEJS_USE_ALTERNATIVE_CLIENT_1: 'true' }
+}
+[2022-05-27T10:03:14.830] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T10:03:14.833] [DEBUG] client - Sending next payload d71dd328-41ca-4bd1-99d2-33ed7d049e77 BryanL-notes-MyStack-api-Lambda_GET_- {}
+[2022-05-27T10:03:14.853] [DEBUG] client - Received error for d71dd328-41ca-4bd1-99d2-33ed7d049e77 BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T10:03:14.856] [DEBUG] client - Response {
+  type: 'failure',
+  error: {
+    errorType: 'TypeError',
+    errorMessage: "Cannot read properties of undefined (reading 'time')",
+    stackTrace: [
+      "TypeError: Cannot read properties of undefined (reading 'time')",
+      '    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)',
+      '    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)',
+      '    at processTicksAndRejections (node:internal/process/task_queues:96:5)'
+    ]
+  }
+}
+[2022-05-27T10:03:14.858] [INFO] client - [90md71dd328-41ca-4bd1-99d2-33ed7d049e77[39m [31mERROR[39m TypeError: Cannot read properties of undefined (reading 'time') 
+ TypeError: Cannot read properties of undefined (reading 'time')
+    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)
+    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-05-27T10:03:14.862] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T10:03:22.191] [INFO] client - [90m975339ed-30a3-48ee-9d4b-941f6740a2e9 REQUEST BryanL-notes-MyStack-apiLambdaGET2D5CB7A7-zJbg14oFcdlw [functions/lambda.handler] invoked[39m
+[2022-05-27T10:03:22.195] [DEBUG] client - Invoking local function...
+[2022-05-27T10:03:22.199] [DEBUG] client - Triggering {
+  id: 'BryanL-notes-MyStack-api-Lambda_GET_-',
+  handler: 'functions/lambda.handler',
+  runtime: 'nodejs16.x',
+  srcPath: 'backend',
+  bundle: { format: 'esm' },
+  root: 'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes'
+}
+[2022-05-27T10:03:22.201] [DEBUG] client - Sending next payload 975339ed-30a3-48ee-9d4b-941f6740a2e9 BryanL-notes-MyStack-api-Lambda_GET_- {}
+[2022-05-27T10:03:22.207] [DEBUG] client - Received error for 975339ed-30a3-48ee-9d4b-941f6740a2e9 BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T10:03:22.210] [DEBUG] client - Response {
+  type: 'failure',
+  error: {
+    errorType: 'TypeError',
+    errorMessage: "Cannot read properties of undefined (reading 'time')",
+    stackTrace: [
+      "TypeError: Cannot read properties of undefined (reading 'time')",
+      '    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)',
+      '    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)',
+      '    at processTicksAndRejections (node:internal/process/task_queues:96:5)'
+    ]
+  }
+}
+[2022-05-27T10:03:22.212] [INFO] client - [90m975339ed-30a3-48ee-9d4b-941f6740a2e9[39m [31mERROR[39m TypeError: Cannot read properties of undefined (reading 'time') 
+ TypeError: Cannot read properties of undefined (reading 'time')
+    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)
+    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-05-27T10:03:22.217] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T10:03:42.321] [INFO] client - [90m5534eeda-9070-4182-9c10-d05880b99294 REQUEST BryanL-notes-MyStack-apiLambdaGET2D5CB7A7-zJbg14oFcdlw [functions/lambda.handler] invoked by API GET /[39m
+[2022-05-27T10:03:42.326] [DEBUG] client - Invoking local function...
+[2022-05-27T10:03:42.329] [DEBUG] client - Triggering {
+  id: 'BryanL-notes-MyStack-api-Lambda_GET_-',
+  handler: 'functions/lambda.handler',
+  runtime: 'nodejs16.x',
+  srcPath: 'backend',
+  bundle: { format: 'esm' },
+  root: 'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes'
+}
+[2022-05-27T10:03:42.332] [DEBUG] client - Sending next payload 5534eeda-9070-4182-9c10-d05880b99294 BryanL-notes-MyStack-api-Lambda_GET_- {
+  version: '2.0',
+  routeKey: 'GET /',
+  rawPath: '/',
+  rawQueryString: '',
+  headers: {
+    accept: '*/*',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'en-US,en;q=0.9',
+    'content-length': '0',
+    host: 'rhemnbnodh.execute-api.us-east-1.amazonaws.com',
+    origin: 'https://console.serverless-stack.com',
+    referer: 'https://console.serverless-stack.com/',
+    'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'cross-site',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36',
+    'x-amzn-trace-id': 'Root=1-6290f65d-76055e2e6589bb0f3b707182',
+    'x-forwarded-for': '67.207.45.187',
+    'x-forwarded-port': '443',
+    'x-forwarded-proto': 'https'
+  },
+  requestContext: {
+    accountId: '499049105488',
+    apiId: 'rhemnbnodh',
+    domainName: 'rhemnbnodh.execute-api.us-east-1.amazonaws.com',
+    domainPrefix: 'rhemnbnodh',
+    http: {
+      method: 'GET',
+      path: '/',
+      protocol: 'HTTP/1.1',
+      sourceIp: '67.207.45.187',
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'
+    },
+    requestId: 'SytusjeTIAMEMOw=',
+    routeKey: 'GET /',
+    stage: '$default',
+    time: '27/May/2022:16:03:41 +0000',
+    timeEpoch: 1653667421873
+  },
+  isBase64Encoded: false
+}
+[2022-05-27T10:03:42.336] [DEBUG] client - Received response for 5534eeda-9070-4182-9c10-d05880b99294 BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T10:03:42.338] [DEBUG] client - Response {
+  type: 'success',
+  data: {
+    statusCode: 200,
+    headers: { 'Content-Type': 'text/plain' },
+    body: 'Hello, World! Your request was received at 27/May/2022:16:03:41 +0000.'
+  }
+}
+[2022-05-27T10:03:42.341] [INFO] client - [90m5534eeda-9070-4182-9c10-d05880b99294 RESPONSE {"statusCode":200,"headers":{"Content-Type":"text/plain"},"body":"Hello, World! Your request was received at 27/May/2022:16:03:41 +0000."}[39m
+[2022-05-27T10:03:42.345] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T10:04:22.377] [INFO] client - [90m51352432-34db-4246-8801-051ce5d416e3 REQUEST BryanL-notes-MyStack-apiLambdaGET2D5CB7A7-zJbg14oFcdlw [functions/lambda.handler] invoked[39m
+[2022-05-27T10:04:22.381] [DEBUG] client - Invoking local function...
+[2022-05-27T10:04:22.385] [DEBUG] client - Triggering {
+  id: 'BryanL-notes-MyStack-api-Lambda_GET_-',
+  handler: 'functions/lambda.handler',
+  runtime: 'nodejs16.x',
+  srcPath: 'backend',
+  bundle: { format: 'esm' },
+  root: 'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes'
+}
+[2022-05-27T10:04:22.388] [DEBUG] client - Sending next payload 51352432-34db-4246-8801-051ce5d416e3 BryanL-notes-MyStack-api-Lambda_GET_- {}
+[2022-05-27T10:04:22.391] [DEBUG] client - Received error for 51352432-34db-4246-8801-051ce5d416e3 BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T10:04:22.393] [DEBUG] client - Response {
+  type: 'failure',
+  error: {
+    errorType: 'TypeError',
+    errorMessage: "Cannot read properties of undefined (reading 'time')",
+    stackTrace: [
+      "TypeError: Cannot read properties of undefined (reading 'time')",
+      '    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)',
+      '    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)',
+      '    at processTicksAndRejections (node:internal/process/task_queues:96:5)'
+    ]
+  }
+}
+[2022-05-27T10:04:22.395] [INFO] client - [90m51352432-34db-4246-8801-051ce5d416e3[39m [31mERROR[39m TypeError: Cannot read properties of undefined (reading 'time') 
+ TypeError: Cannot read properties of undefined (reading 'time')
+    at Runtime.handler (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/.sst/artifacts/BryanL-notes-MyStack-api-Lambda_GET_-/backend/functions/lambda.js:8:78)
+    at Runtime.handleOnce (file:///C:/Users/bryan.lewis/Documents/Test%20Projects/notes/node_modules/@serverless-stack/aws-lambda-ric/lib/Runtime/Runtime.js:53:33)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-05-27T10:04:22.398] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T10:04:28.564] [INFO] client - [90me8fdf8a2-e5f4-4fdf-a724-90d40a076922 REQUEST BryanL-notes-MyStack-apiLambdaGET2D5CB7A7-zJbg14oFcdlw [functions/lambda.handler] invoked by API GET /[39m
+[2022-05-27T10:04:28.568] [DEBUG] client - Invoking local function...
+[2022-05-27T10:04:28.571] [DEBUG] client - Triggering {
+  id: 'BryanL-notes-MyStack-api-Lambda_GET_-',
+  handler: 'functions/lambda.handler',
+  runtime: 'nodejs16.x',
+  srcPath: 'backend',
+  bundle: { format: 'esm' },
+  root: 'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes'
+}
+[2022-05-27T10:04:28.575] [DEBUG] client - Sending next payload e8fdf8a2-e5f4-4fdf-a724-90d40a076922 BryanL-notes-MyStack-api-Lambda_GET_- {
+  version: '2.0',
+  routeKey: 'GET /',
+  rawPath: '/',
+  rawQueryString: '',
+  headers: {
+    accept: '*/*',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'en-US,en;q=0.9',
+    'content-length': '0',
+    host: 'rhemnbnodh.execute-api.us-east-1.amazonaws.com',
+    origin: 'https://console.serverless-stack.com',
+    referer: 'https://console.serverless-stack.com/',
+    'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="101", "Google Chrome";v="101"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'cross-site',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36',
+    'x-amzn-trace-id': 'Root=1-6290f68c-3a001680445b15eb054dc93d',
+    'x-forwarded-for': '67.207.45.187',
+    'x-forwarded-port': '443',
+    'x-forwarded-proto': 'https'
+  },
+  requestContext: {
+    accountId: '499049105488',
+    apiId: 'rhemnbnodh',
+    domainName: 'rhemnbnodh.execute-api.us-east-1.amazonaws.com',
+    domainPrefix: 'rhemnbnodh',
+    http: {
+      method: 'GET',
+      path: '/',
+      protocol: 'HTTP/1.1',
+      sourceIp: '67.207.45.187',
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'
+    },
+    requestId: 'Syt17hKKIAMEMaQ=',
+    routeKey: 'GET /',
+    stage: '$default',
+    time: '27/May/2022:16:04:28 +0000',
+    timeEpoch: 1653667468144
+  },
+  isBase64Encoded: false
+}
+[2022-05-27T10:04:28.579] [DEBUG] client - Received response for e8fdf8a2-e5f4-4fdf-a724-90d40a076922 BryanL-notes-MyStack-api-Lambda_GET_-
+[2022-05-27T10:04:28.582] [DEBUG] client - Response {
+  type: 'success',
+  data: {
+    statusCode: 200,
+    headers: { 'Content-Type': 'text/plain' },
+    body: 'Hello, World! Your request was received at 27/May/2022:16:04:28 +0000.'
+  }
+}
+[2022-05-27T10:04:28.583] [INFO] client - [90me8fdf8a2-e5f4-4fdf-a724-90d40a076922 RESPONSE {"statusCode":200,"headers":{"Content-Type":"text/plain"},"body":"Hello, World! Your request was received at 27/May/2022:16:04:28 +0000."}[39m
+[2022-05-27T10:04:28.586] [DEBUG] client - Worker waiting for function BryanL-notes-MyStack-api-Lambda_GET_-

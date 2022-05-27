@@ -1,0 +1,1 @@
+{"id":"BryanL-notes-MyStack-api-Lambda_GET_-","handler":"functions/lambda.handler","runtime":"nodejs16.x","srcPath":"backend","bundle":{"format":"esm"},"root":"C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes"}

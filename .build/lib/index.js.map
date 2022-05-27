@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../stacks/MyStack.js", "../../stacks/index.js"],
+  "sourcesContent": ["import { Api } from \"@serverless-stack/resources\";\n\nexport function MyStack({ stack }) {\n  new Api(stack, \"api\", {\n    routes: {\n      \"GET /\": \"functions/lambda.handler\",\n    },\n  });\n}\n", "import { MyStack } from \"./MyStack\";\nimport { App } from \"@serverless-stack/resources\";\n\n/**\n * @param {App} app\n */\nexport default function (app) {\n  app.setDefaultFunctionProps({\n    runtime: \"nodejs16.x\",\n    srcPath: \"backend\",\n    bundle: {\n      format: \"esm\",\n    },\n  });\n  app.stack(MyStack);\n}\n"],
+  "mappings": ";;;;;;AAAA;AAEO,iBAAiB,EAAE,SAAS;AACjC,MAAI,IAAI,OAAO,OAAO;AAAA,IACpB,QAAQ;AAAA,MACN,SAAS;AAAA,IACX;AAAA,EACF,CAAC;AACH;AANgB;;;ACDhB;AAKe,wBAAU,KAAK;AAC5B,MAAI,wBAAwB;AAAA,IAC1B,SAAS;AAAA,IACT,SAAS;AAAA,IACT,QAAQ;AAAA,MACN,QAAQ;AAAA,IACV;AAAA,EACF,CAAC;AACD,MAAI,MAAM,OAAO;AACnB;AATO;",
+  "names": []
+}
