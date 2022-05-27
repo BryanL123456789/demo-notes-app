@@ -27,7 +27,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-deploy-role-499049105488-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-cfn-exec-role-499049105488-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/821dddf5c1e29f00e2b0b1c827e8a9f5e71a4f08be7d5163d65d509271d4f359.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/a633117a2b4a72b03e7d4cc846873b4d6f2bf274e9a972c69b169406397c9c4d.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -96,6 +96,12 @@
             "data": "ExportsOutputRefNotesTable7100B0E8C879CB95"
           }
         ],
+        "/BryanL-notes-StorageStack/Exports/Output{\"Fn::GetAtt\":[\"UploadsBucketC4B27CC7\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttUploadsBucketC4B27CC7Arn515ECA45"
+          }
+        ],
         "/BryanL-notes-StorageStack/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
@@ -131,7 +137,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-deploy-role-499049105488-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-cfn-exec-role-499049105488-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/767a5d30dd03960d4d0cef4ee82f1355060d181ab3a6502f41ee6d885750ae8e.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/069afd39d830d36cd8ec89f81a211b02e2c8056fe0f7e51336ad59db92b49554.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -403,6 +409,12 @@
             "data": "ApiEndpoint"
           }
         ],
+        "/BryanL-notes-ApiStack/Exports/Output{\"Ref\":\"ApiCD79AAA0\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefApiCD79AAA0A1504A18"
+          }
+        ],
         "/BryanL-notes-ApiStack/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
@@ -417,6 +429,152 @@
         ]
       },
       "displayName": "BryanL-notes-ApiStack"
+    },
+    "BryanL-notes-AuthStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "BryanL-notes-AuthStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "BryanL-notes-AuthStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://499049105488/us-east-1",
+      "properties": {
+        "templateFile": "BryanL-notes-AuthStack.template.json",
+        "tags": {
+          "sst:app": "notes",
+          "sst:stage": "BryanL"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-deploy-role-499049105488-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-cfn-exec-role-499049105488-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/efc84762002dcca5a78fb98ef339595a862b5b39d1404978338104f34de89d71.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "BryanL-notes-AuthStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-lookup-role-499049105488-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "BryanL-notes-ApiStack",
+        "BryanL-notes-StorageStack",
+        "BryanL-notes-AuthStack.assets"
+      ],
+      "metadata": {
+        "/BryanL-notes-AuthStack": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "sst:app",
+                "Value": "notes"
+              },
+              {
+                "Key": "sst:stage",
+                "Value": "BryanL"
+              }
+            ]
+          }
+        ],
+        "/BryanL-notes-AuthStack/SSTMetadata": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SSTMetadata"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Auth/UserPool/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AuthUserPool8115E87F"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Auth/UserPoolClient/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AuthUserPoolClient0AA456E4"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Auth/IdentityPool": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AuthIdentityPool12DFB5E1"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Auth/IdentityPoolAuthRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AuthIdentityPoolAuthRoleD14DA003"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Auth/IdentityPoolAuthRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AuthIdentityPoolAuthRoleDefaultPolicy32D17CAC"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Auth/IdentityPoolUnauthRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AuthIdentityPoolUnauthRoleA8DE48F3"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Auth/IdentityPoolUnauthRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AuthIdentityPoolUnauthRoleDefaultPolicy0417F857"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Auth/IdentityPoolRoleAttachment": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AuthIdentityPoolRoleAttachmentB0D3DC72"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Region": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Region"
+          }
+        ],
+        "/BryanL-notes-AuthStack/UserPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolId"
+          }
+        ],
+        "/BryanL-notes-AuthStack/IdentityPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IdentityPoolId"
+          }
+        ],
+        "/BryanL-notes-AuthStack/UserPoolClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolClientId"
+          }
+        ],
+        "/BryanL-notes-AuthStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/BryanL-notes-AuthStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "BryanL-notes-AuthStack"
     }
   }
 }

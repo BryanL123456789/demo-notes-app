@@ -466,7 +466,7 @@
      "Ref": "ApiCD79AAA0"
     },
     "RouteKey": "GET /notes",
-    "AuthorizationType": "NONE",
+    "AuthorizationType": "AWS_IAM",
     "Target": {
      "Fn::Join": [
       "",
@@ -712,7 +712,7 @@
      "Ref": "ApiCD79AAA0"
     },
     "RouteKey": "POST /notes",
-    "AuthorizationType": "NONE",
+    "AuthorizationType": "AWS_IAM",
     "Target": {
      "Fn::Join": [
       "",
@@ -958,7 +958,7 @@
      "Ref": "ApiCD79AAA0"
     },
     "RouteKey": "GET /notes/{id}",
-    "AuthorizationType": "NONE",
+    "AuthorizationType": "AWS_IAM",
     "Target": {
      "Fn::Join": [
       "",
@@ -1204,7 +1204,7 @@
      "Ref": "ApiCD79AAA0"
     },
     "RouteKey": "PUT /notes/{id}",
-    "AuthorizationType": "NONE",
+    "AuthorizationType": "AWS_IAM",
     "Target": {
      "Fn::Join": [
       "",
@@ -1450,7 +1450,7 @@
      "Ref": "ApiCD79AAA0"
     },
     "RouteKey": "DELETE /notes/{id}",
-    "AuthorizationType": "NONE",
+    "AuthorizationType": "AWS_IAM",
     "Target": {
      "Fn::Join": [
       "",
@@ -1475,6 +1475,14 @@
      "ApiCD79AAA0",
      "ApiEndpoint"
     ]
+   }
+  },
+  "ExportsOutputRefApiCD79AAA0A1504A18": {
+   "Value": {
+    "Ref": "ApiCD79AAA0"
+   },
+   "Export": {
+    "Name": "BryanL-notes-ApiStack:ExportsOutputRefApiCD79AAA0A1504A18"
    }
   }
  },

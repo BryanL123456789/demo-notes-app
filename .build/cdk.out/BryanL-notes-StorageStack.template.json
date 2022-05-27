@@ -119,6 +119,17 @@
    "Export": {
     "Name": "BryanL-notes-StorageStack:ExportsOutputRefNotesTable7100B0E8C879CB95"
    }
+  },
+  "ExportsOutputFnGetAttUploadsBucketC4B27CC7Arn515ECA45": {
+   "Value": {
+    "Fn::GetAtt": [
+     "UploadsBucketC4B27CC7",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "BryanL-notes-StorageStack:ExportsOutputFnGetAttUploadsBucketC4B27CC7Arn515ECA45"
+   }
   }
  },
  "Parameters": {
