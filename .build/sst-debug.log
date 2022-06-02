@@ -4487,3 +4487,33 @@ Stack BryanL-notes-AuthStack
 [2022-06-02T12:17:08.309] [DEBUG] client - Response { type: 'success', data: { statusCode: 200, body: '{"status":true}' } }
 [2022-06-02T12:17:08.310] [INFO] client - [90m028a78c4-55f5-423a-8e11-a669d13b9d9f RESPONSE {"statusCode":200,"body":"{\"status\":true}"}[39m
 [2022-06-02T12:17:08.311] [DEBUG] client - Worker waiting for function BryanL-notes-ApiStack-Api-Lambda_POST_-billing
+[2022-06-02T12:29:35.302] [INFO] client - [90mStacks: Building changes...[39m
+[2022-06-02T12:29:35.312] [DEBUG] default - synth {
+  app: 'node .build/run.mjs',
+  output: '.build/cdk.out',
+  rollback: true,
+  roleArn: undefined,
+  verbose: 0,
+  noColor: false
+}
+[2022-06-02T12:29:35.322] [INFO] client - [90mStacks: Synthesizing changes...[39m
+[2022-06-02T12:29:41.069] [TRACE] cdk - [32mSuccessfully synthesized to [34mC:\Users\bryan.lewis\Documents\Test Projects\notes\.build\cdk.out[39m[32m[39m
+Supply a stack id ([32mBryanL-notes-StorageStack[39m, [32mBryanL-notes-ApiStack[39m, [32mBryanL-notes-AuthStack[39m) to display its template.
+
+
+[2022-06-02T12:29:41.076] [DEBUG] client - Draining function BryanL-notes-ApiStack-Api-Lambda_GET_-notes
+[2022-06-02T12:29:41.077] [DEBUG] client - Draining function BryanL-notes-ApiStack-Api-Lambda_POST_-notes
+[2022-06-02T12:29:41.077] [DEBUG] client - Draining function BryanL-notes-ApiStack-Api-Lambda_GET_-notes-{id}
+[2022-06-02T12:29:41.077] [DEBUG] client - Draining function BryanL-notes-ApiStack-Api-Lambda_PUT_-notes-{id}
+[2022-06-02T12:29:41.077] [DEBUG] client - Draining function BryanL-notes-ApiStack-Api-Lambda_DELETE_-notes-{id}
+[2022-06-02T12:29:41.077] [DEBUG] client - Draining function BryanL-notes-ApiStack-Api-Lambda_POST_-billing
+[2022-06-02T12:29:41.078] [INFO] client - [90mStacks: No changes to deploy.[39m
+[2022-06-02T12:32:46.824] [DEBUG] default - File changed:  [
+  'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes\\backend\\test\\cost.test.js'
+]
+[2022-06-02T12:33:50.576] [DEBUG] default - File changed:  [
+  'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes\\backend\\test\\cost.test.js'
+]
+[2022-06-02T12:34:13.287] [DEBUG] default - File changed:  [
+  'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes\\backend\\test\\cost.test.js'
+]
