@@ -4517,3 +4517,9 @@ Supply a stack id ([32mBryanL-notes-StorageStack[39m, [32mBryanL-notes-ApiSta
 [2022-06-02T12:34:13.287] [DEBUG] default - File changed:  [
   'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes\\backend\\test\\cost.test.js'
 ]
+[2022-06-02T12:41:15.524] [DEBUG] default - File changed:  [
+  'C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes\\backend\\util\\handler.js'
+]
+[2022-06-02T12:41:15.527] [INFO] client - [90mFunctions: Building backend functions/billing.main...[39m
+[2022-06-02T12:41:15.557] [INFO] client - [90mFunctions: Done building backend functions/billing.main (31ms)[39m
+[2022-06-02T12:41:15.557] [DEBUG] client - Draining function BryanL-notes-ApiStack-Api-Lambda_POST_-billing
