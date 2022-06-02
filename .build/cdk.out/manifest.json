@@ -137,7 +137,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-deploy-role-499049105488-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-cfn-exec-role-499049105488-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/2749040b6a4158d544052bd6695dcf775bee27aecf6836d984f6fcf17f4ec301.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/c17658e76c435a0df3e8fb5f5d3aeee049c75bdbe5c1b7ec680b6efea076d391.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -401,6 +401,48 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ApiRouteDELETEnotesidCFA3191E"
+          }
+        ],
+        "/BryanL-notes-ApiStack/Api/Lambda_POST_--billing/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiLambdaPOSTbillingServiceRoleB5827DFF"
+          }
+        ],
+        "/BryanL-notes-ApiStack/Api/Lambda_POST_--billing/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiLambdaPOSTbillingServiceRoleDefaultPolicy23915694"
+          }
+        ],
+        "/BryanL-notes-ApiStack/Api/Lambda_POST_--billing/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiLambdaPOSTbilling71E49732"
+          }
+        ],
+        "/BryanL-notes-ApiStack/Api/Lambda_POST_--billing/EventInvokeConfig/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiLambdaPOSTbillingEventInvokeConfigFF3A6E0D"
+          }
+        ],
+        "/BryanL-notes-ApiStack/Api/Route_POST_--billing/Integration_POST_--billing/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiRoutePOSTbillingIntegrationPOSTbillingE351CA9B"
+          }
+        ],
+        "/BryanL-notes-ApiStack/Api/Route_POST_--billing/Integration_POST_--billing-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiRoutePOSTbillingIntegrationPOSTbillingPermissionF7A0B32C"
+          }
+        ],
+        "/BryanL-notes-ApiStack/Api/Route_POST_--billing/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiRoutePOSTbilling09AED9DA"
           }
         ],
         "/BryanL-notes-ApiStack/ApiEndpoint": [

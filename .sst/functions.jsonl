@@ -3,3 +3,4 @@
 {"id":"BryanL-notes-ApiStack-Api-Lambda_GET_-notes-{id}","handler":"functions/get.main","runtime":"nodejs16.x","srcPath":"backend","bundle":{"format":"esm"},"root":"C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes"}
 {"id":"BryanL-notes-ApiStack-Api-Lambda_PUT_-notes-{id}","handler":"functions/update.main","runtime":"nodejs16.x","srcPath":"backend","bundle":{"format":"esm"},"root":"C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes"}
 {"id":"BryanL-notes-ApiStack-Api-Lambda_DELETE_-notes-{id}","handler":"functions/delete.main","runtime":"nodejs16.x","srcPath":"backend","bundle":{"format":"esm"},"root":"C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes"}
+{"id":"BryanL-notes-ApiStack-Api-Lambda_POST_-billing","handler":"functions/billing.main","runtime":"nodejs16.x","srcPath":"backend","bundle":{"format":"esm"},"root":"C:\\Users\\bryan.lewis\\Documents\\Test Projects\\notes"}

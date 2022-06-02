@@ -2129,6 +2129,367 @@
                   "fqn": "@aws-cdk/aws-apigatewayv2-alpha.HttpRoute",
                   "version": "2.24.0-alpha.0"
                 }
+              },
+              "Lambda_POST_--billing": {
+                "id": "Lambda_POST_--billing",
+                "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "sst:app",
+                                "value": "notes"
+                              },
+                              {
+                                "key": "sst:stage",
+                                "value": "BryanL"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.24.0"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "xray:PutTraceSegments",
+                                        "xray:PutTelemetryRecords"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    },
+                                    {
+                                      "Action": "s3:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        "arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs",
+                                        "arn:aws:s3:::bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs/*"
+                                      ]
+                                    },
+                                    {
+                                      "Action": "dynamodb:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::ImportValue": "BryanL-notes-StorageStack:ExportsOutputFnGetAttNotesTable7100B0E8Arn5DD5BF38"
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::ImportValue": "BryanL-notes-StorageStack:ExportsOutputFnGetAttNotesTable7100B0E8Arn5DD5BF38"
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "ApiLambdaPOSTbillingServiceRoleDefaultPolicy23915694",
+                                "roles": [
+                                  {
+                                    "Ref": "ApiLambdaPOSTbillingServiceRoleB5827DFF"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.24.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.24.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-499049105488-us-east-1",
+                          "s3Key": "a9565a424c73ec5adc8374c8aca92e3582b9caa2019c3c1578306b21ac524b33.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "ApiLambdaPOSTbillingServiceRoleB5827DFF",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "TABLE_NAME": {
+                              "Fn::ImportValue": "BryanL-notes-StorageStack:ExportsOutputRefNotesTable7100B0E8C879CB95"
+                            },
+                            "STRIPE_SECRET_KEY": "sk_test_51L4AlQCN6NT5BQ0aCmNfswgvm33szgd3cfeWdpOCnCjPFQzAseXMvUwsu4GGnD4oqrQQT0AnBXQe24I4OEG6aLhf003OTyDFoG",
+                            "SST_DEBUG_SRC_PATH": "backend",
+                            "SST_DEBUG_SRC_HANDLER": "functions/billing.main",
+                            "SST_DEBUG_ENDPOINT": "wss://b7vh9mh88i.execute-api.us-east-1.amazonaws.com/BryanL",
+                            "SST_DEBUG_BUCKET_NAME": "bryanl-notes-debug-stack-bucket83908e77-1f040qdl9vabs",
+                            "SST_FUNCTION_ID": "BryanL-notes-ApiStack-Api-Lambda_POST_-billing",
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+                            "SST_DEBUG_IS_API_ROUTE": "1"
+                          }
+                        },
+                        "ephemeralStorage": {
+                          "size": 512
+                        },
+                        "handler": "index.main",
+                        "memorySize": 1024,
+                        "runtime": "nodejs16.x",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "notes"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "BryanL"
+                          }
+                        ],
+                        "timeout": 10,
+                        "tracingConfig": {
+                          "mode": "Active"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "EventInvokeConfig": {
+                    "id": "EventInvokeConfig",
+                    "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing/EventInvokeConfig",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "BryanL-notes-ApiStack/Api/Lambda_POST_--billing/EventInvokeConfig/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::EventInvokeConfig",
+                          "aws:cdk:cloudformation:props": {
+                            "functionName": {
+                              "Ref": "ApiLambdaPOSTbilling71E49732"
+                            },
+                            "qualifier": "$LATEST",
+                            "maximumRetryAttempts": 0
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_lambda.CfnEventInvokeConfig",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.EventInvokeConfig",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.Function",
+                  "version": "2.24.0"
+                }
+              },
+              "Route_POST_--billing": {
+                "id": "Route_POST_--billing",
+                "path": "BryanL-notes-ApiStack/Api/Route_POST_--billing",
+                "children": {
+                  "Integration_POST_--billing": {
+                    "id": "Integration_POST_--billing",
+                    "path": "BryanL-notes-ApiStack/Api/Route_POST_--billing/Integration_POST_--billing",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "BryanL-notes-ApiStack/Api/Route_POST_--billing/Integration_POST_--billing/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Integration",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Ref": "ApiCD79AAA0"
+                            },
+                            "integrationType": "AWS_PROXY",
+                            "integrationUri": {
+                              "Fn::GetAtt": [
+                                "ApiLambdaPOSTbilling71E49732",
+                                "Arn"
+                              ]
+                            },
+                            "payloadFormatVersion": "2.0"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigatewayv2.CfnIntegration",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-apigatewayv2-alpha.HttpIntegration",
+                      "version": "2.24.0-alpha.0"
+                    }
+                  },
+                  "Integration_POST_--billing-Permission": {
+                    "id": "Integration_POST_--billing-Permission",
+                    "path": "BryanL-notes-ApiStack/Api/Route_POST_--billing/Integration_POST_--billing-Permission",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                      "aws:cdk:cloudformation:props": {
+                        "action": "lambda:InvokeFunction",
+                        "functionName": {
+                          "Fn::GetAtt": [
+                            "ApiLambdaPOSTbilling71E49732",
+                            "Arn"
+                          ]
+                        },
+                        "principal": "apigateway.amazonaws.com",
+                        "sourceArn": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":execute-api:us-east-1:499049105488:",
+                              {
+                                "Ref": "ApiCD79AAA0"
+                              },
+                              "/*/*/billing"
+                            ]
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BryanL-notes-ApiStack/Api/Route_POST_--billing/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "apiId": {
+                          "Ref": "ApiCD79AAA0"
+                        },
+                        "routeKey": "POST /billing",
+                        "authorizationType": "AWS_IAM",
+                        "target": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "integrations/",
+                              {
+                                "Ref": "ApiRoutePOSTbillingIntegrationPOSTbillingE351CA9B"
+                              }
+                            ]
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigatewayv2.CfnRoute",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-apigatewayv2-alpha.HttpRoute",
+                  "version": "2.24.0-alpha.0"
+                }
               }
             },
             "constructInfo": {
