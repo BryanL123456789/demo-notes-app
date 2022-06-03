@@ -27,7 +27,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-deploy-role-499049105488-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-cfn-exec-role-499049105488-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/a633117a2b4a72b03e7d4cc846873b4d6f2bf274e9a972c69b169406397c9c4d.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/5d49e86a7a7424ef4fff0090a36d8764df8576f84c043bb0006c538571d15291.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -102,6 +102,12 @@
             "data": "ExportsOutputFnGetAttUploadsBucketC4B27CC7Arn515ECA45"
           }
         ],
+        "/BryanL-notes-StorageStack/Exports/Output{\"Ref\":\"UploadsBucketC4B27CC7\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefUploadsBucketC4B27CC7CCC94A6B"
+          }
+        ],
         "/BryanL-notes-StorageStack/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
@@ -137,7 +143,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-deploy-role-499049105488-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-cfn-exec-role-499049105488-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/c17658e76c435a0df3e8fb5f5d3aeee049c75bdbe5c1b7ec680b6efea076d391.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/54d7c85a63e2ec03ef483a02500ea24a6d14e398ee0ecd2415c11a07c08fc260.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -457,6 +463,12 @@
             "data": "ExportsOutputRefApiCD79AAA0A1504A18"
           }
         ],
+        "/BryanL-notes-ApiStack/Exports/Output{\"Fn::GetAtt\":[\"ApiCD79AAA0\",\"ApiEndpoint\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttApiCD79AAA0ApiEndpoint389C4905"
+          }
+        ],
         "/BryanL-notes-ApiStack/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
@@ -492,7 +504,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-deploy-role-499049105488-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-cfn-exec-role-499049105488-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/efc84762002dcca5a78fb98ef339595a862b5b39d1404978338104f34de89d71.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/a07deb916584a9422f857c3446126e13fbf289b86eb3c2636ac03ff75fe52f18.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -603,6 +615,24 @@
             "data": "UserPoolClientId"
           }
         ],
+        "/BryanL-notes-AuthStack/Exports/Output{\"Ref\":\"AuthUserPool8115E87F\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefAuthUserPool8115E87F4F9C6D4C"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Exports/Output{\"Ref\":\"AuthIdentityPool12DFB5E1\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefAuthIdentityPool12DFB5E192D02E93"
+          }
+        ],
+        "/BryanL-notes-AuthStack/Exports/Output{\"Ref\":\"AuthUserPoolClient0AA456E4\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefAuthUserPoolClient0AA456E49BCE9731"
+          }
+        ],
         "/BryanL-notes-AuthStack/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
@@ -617,6 +647,237 @@
         ]
       },
       "displayName": "BryanL-notes-AuthStack"
+    },
+    "BryanL-notes-FrontendStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "BryanL-notes-FrontendStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "BryanL-notes-FrontendStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://499049105488/us-east-1",
+      "properties": {
+        "templateFile": "BryanL-notes-FrontendStack.template.json",
+        "tags": {
+          "sst:app": "notes",
+          "sst:stage": "BryanL"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-deploy-role-499049105488-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-cfn-exec-role-499049105488-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-499049105488-us-east-1/4c9a0202352f464f13d5cfc261e19bb01130dfc29d87480a10ed3d12e313aa76.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "BryanL-notes-FrontendStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-lookup-role-499049105488-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "BryanL-notes-ApiStack",
+        "BryanL-notes-StorageStack",
+        "BryanL-notes-AuthStack",
+        "BryanL-notes-FrontendStack.assets"
+      ],
+      "metadata": {
+        "/BryanL-notes-FrontendStack": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "sst:app",
+                "Value": "notes"
+              },
+              {
+                "Key": "sst:stage",
+                "Value": "BryanL"
+              }
+            ]
+          }
+        ],
+        "/BryanL-notes-FrontendStack/SSTMetadata": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SSTMetadata"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteAwsCliLayer032ED8F7"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_API_URL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteSstSiteEnvREACTAPPAPIURL2A01004D"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_REGION": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteSstSiteEnvREACTAPPREGIONBBB67CDE"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_BUCKET": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteSstSiteEnvREACTAPPBUCKETB63B1A97"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_USER_POOL_ID": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteSstSiteEnvREACTAPPUSERPOOLID08C215DE"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_IDENTITY_POOL_ID": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteSstSiteEnvREACTAPPIDENTITYPOOLIDD9D34008"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_USER_POOL_CLIENT_ID": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteSstSiteEnvREACTAPPUSERPOOLCLIENTID68892D5A"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/S3Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteS3BucketB9BB7C04"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/S3Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteS3BucketPolicyD88B458D"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/S3Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteS3BucketAutoDeleteObjectsCustomResource20A5650F"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/S3Uploader/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteS3UploaderServiceRoleEA10A23A"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/S3Uploader/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteS3UploaderServiceRoleDefaultPolicy2FE62292"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/S3Uploader/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteS3Uploader4099484B"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/S3Handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteS3HandlerServiceRoleB1C8F614"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/S3Handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteS3HandlerServiceRoleDefaultPolicy50C54561"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/S3Handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteS3HandlerE190AB4B"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/S3Deployment/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteS3Deployment8044D733"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/Distribution/Origin1/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteDistributionOrigin1S3OriginE341B3F7"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/Distribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteDistributionFFB1766B"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteCloudFrontInvalidatorServiceRole0398B530"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteCloudFrontInvalidatorServiceRoleDefaultPolicyB61C59B5"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteCloudFrontInvalidator335AA9F4"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidation/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReactSiteCloudFrontInvalidationFEE26148"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/SiteUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SiteUrl"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/BryanL-notes-FrontendStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "BryanL-notes-FrontendStack"
     }
   }
 }

@@ -1,1 +1,1 @@
-[]
+[{"id":"ReactSite","path":"frontend","stack":"BryanL-notes-FrontendStack","environmentOutputs":{"REACT_APP_API_URL":"https://r99h3e1i8f.execute-api.us-east-1.amazonaws.com","REACT_APP_REGION":"us-east-1","REACT_APP_BUCKET":"bryanl-notes-storagestack-uploadsbucketc4b27cc7-c8uvc7bm5tph","REACT_APP_USER_POOL_ID":"us-east-1_PmzsQbtpb","REACT_APP_IDENTITY_POOL_ID":"us-east-1:7fd7cccd-9f83-421f-b06d-3d503a312dbc","REACT_APP_USER_POOL_CLIENT_ID":"1q5nt225bundp371hcr7oshqvc"}}]

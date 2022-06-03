@@ -1,7 +1,7 @@
 {
   "version": "18.0.0",
   "files": {
-    "efc84762002dcca5a78fb98ef339595a862b5b39d1404978338104f34de89d71": {
+    "a07deb916584a9422f857c3446126e13fbf289b86eb3c2636ac03ff75fe52f18": {
       "source": {
         "path": "BryanL-notes-AuthStack.template.json",
         "packaging": "file"
@@ -9,7 +9,7 @@
       "destinations": {
         "499049105488-us-east-1": {
           "bucketName": "cdk-hnb659fds-assets-499049105488-us-east-1",
-          "objectKey": "efc84762002dcca5a78fb98ef339595a862b5b39d1404978338104f34de89d71.json",
+          "objectKey": "a07deb916584a9422f857c3446126e13fbf289b86eb3c2636ac03ff75fe52f18.json",
           "region": "us-east-1",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::499049105488:role/cdk-hnb659fds-file-publishing-role-499049105488-us-east-1"
         }

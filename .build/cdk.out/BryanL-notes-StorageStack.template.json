@@ -37,6 +37,26 @@
   "UploadsBucketC4B27CC7": {
    "Type": "AWS::S3::Bucket",
    "Properties": {
+    "CorsConfiguration": {
+     "CorsRules": [
+      {
+       "AllowedHeaders": [
+        "*"
+       ],
+       "AllowedMethods": [
+        "GET",
+        "PUT",
+        "POST",
+        "DELETE",
+        "HEAD"
+       ],
+       "AllowedOrigins": [
+        "*"
+       ],
+       "MaxAge": 86400
+      }
+     ]
+    },
     "Tags": [
      {
       "Key": "sst:app",
@@ -129,6 +149,14 @@
    },
    "Export": {
     "Name": "BryanL-notes-StorageStack:ExportsOutputFnGetAttUploadsBucketC4B27CC7Arn515ECA45"
+   }
+  },
+  "ExportsOutputRefUploadsBucketC4B27CC7CCC94A6B": {
+   "Value": {
+    "Ref": "UploadsBucketC4B27CC7"
+   },
+   "Export": {
+    "Name": "BryanL-notes-StorageStack:ExportsOutputRefUploadsBucketC4B27CC7CCC94A6B"
    }
   }
  },

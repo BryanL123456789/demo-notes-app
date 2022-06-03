@@ -345,6 +345,30 @@
    "Value": {
     "Ref": "AuthUserPoolClient0AA456E4"
    }
+  },
+  "ExportsOutputRefAuthUserPool8115E87F4F9C6D4C": {
+   "Value": {
+    "Ref": "AuthUserPool8115E87F"
+   },
+   "Export": {
+    "Name": "BryanL-notes-AuthStack:ExportsOutputRefAuthUserPool8115E87F4F9C6D4C"
+   }
+  },
+  "ExportsOutputRefAuthIdentityPool12DFB5E192D02E93": {
+   "Value": {
+    "Ref": "AuthIdentityPool12DFB5E1"
+   },
+   "Export": {
+    "Name": "BryanL-notes-AuthStack:ExportsOutputRefAuthIdentityPool12DFB5E192D02E93"
+   }
+  },
+  "ExportsOutputRefAuthUserPoolClient0AA456E49BCE9731": {
+   "Value": {
+    "Ref": "AuthUserPoolClient0AA456E4"
+   },
+   "Export": {
+    "Name": "BryanL-notes-AuthStack:ExportsOutputRefAuthUserPoolClient0AA456E49BCE9731"
+   }
   }
  },
  "Parameters": {

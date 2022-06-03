@@ -9,7 +9,16 @@ import { Api, use } from "@serverless-stack/resources";
 // stacks/StorageStack.js
 import { Bucket, Table } from "@serverless-stack/resources";
 function StorageStack({ stack, app }) {
-  const bucket = new Bucket(stack, "Uploads");
+  const bucket = new Bucket(stack, "Uploads", {
+    cors: [
+      {
+        maxAge: "1 day",
+        allowedOrigins: ["*"],
+        allowedHeaders: ["*"],
+        allowedMethods: ["GET", "PUT", "POST", "DELETE", "HEAD"]
+      }
+    ]
+  });
   const table = new Table(stack, "Notes", {
     fields: {
       userId: "string",
@@ -87,6 +96,29 @@ function AuthStack({ stack, app }) {
 }
 __name(AuthStack, "AuthStack");
 
+// stacks/FrontendStack.js
+import { ReactStaticSite, use as use3 } from "@serverless-stack/resources";
+function FrontendStack({ stack, app }) {
+  const { api } = use3(ApiStack);
+  const { auth } = use3(AuthStack);
+  const { bucket } = use3(StorageStack);
+  const site = new ReactStaticSite(stack, "ReactSite", {
+    path: "frontend",
+    environment: {
+      REACT_APP_API_URL: api.customDomainUrl || api.url,
+      REACT_APP_REGION: app.region,
+      REACT_APP_BUCKET: bucket.bucketName,
+      REACT_APP_USER_POOL_ID: auth.userPoolId,
+      REACT_APP_IDENTITY_POOL_ID: auth.cognitoIdentityPoolId,
+      REACT_APP_USER_POOL_CLIENT_ID: auth.userPoolClientId
+    }
+  });
+  stack.addOutputs({
+    SiteUrl: site.url
+  });
+}
+__name(FrontendStack, "FrontendStack");
+
 // stacks/index.js
 function main(app) {
   app.setDefaultFunctionProps({
@@ -96,7 +128,7 @@ function main(app) {
       format: "esm"
     }
   });
-  app.stack(StorageStack).stack(ApiStack).stack(AuthStack);
+  app.stack(StorageStack).stack(ApiStack).stack(AuthStack).stack(FrontendStack);
 }
 __name(main, "main");
 export {

@@ -38,6 +38,26 @@
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
                       "aws:cdk:cloudformation:props": {
+                        "corsConfiguration": {
+                          "corsRules": [
+                            {
+                              "maxAge": 86400,
+                              "allowedHeaders": [
+                                "*"
+                              ],
+                              "allowedMethods": [
+                                "GET",
+                                "PUT",
+                                "POST",
+                                "DELETE",
+                                "HEAD"
+                              ],
+                              "allowedOrigins": [
+                                "*"
+                              ]
+                            }
+                          ]
+                        },
                         "tags": [
                           {
                             "key": "sst:app",
@@ -166,6 +186,14 @@
               "Output{\"Fn::GetAtt\":[\"UploadsBucketC4B27CC7\",\"Arn\"]}": {
                 "id": "Output{\"Fn::GetAtt\":[\"UploadsBucketC4B27CC7\",\"Arn\"]}",
                 "path": "BryanL-notes-StorageStack/Exports/Output{\"Fn::GetAtt\":[\"UploadsBucketC4B27CC7\",\"Arn\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
+              },
+              "Output{\"Ref\":\"UploadsBucketC4B27CC7\"}": {
+                "id": "Output{\"Ref\":\"UploadsBucketC4B27CC7\"}",
+                "path": "BryanL-notes-StorageStack/Exports/Output{\"Ref\":\"UploadsBucketC4B27CC7\"}",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
                   "version": "2.24.0"
@@ -2516,6 +2544,14 @@
                   "fqn": "aws-cdk-lib.CfnOutput",
                   "version": "2.24.0"
                 }
+              },
+              "Output{\"Fn::GetAtt\":[\"ApiCD79AAA0\",\"ApiEndpoint\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"ApiCD79AAA0\",\"ApiEndpoint\"]}",
+                "path": "BryanL-notes-ApiStack/Exports/Output{\"Fn::GetAtt\":[\"ApiCD79AAA0\",\"ApiEndpoint\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
               }
             },
             "constructInfo": {
@@ -2978,6 +3014,1205 @@
           "UserPoolClientId": {
             "id": "UserPoolClientId",
             "path": "BryanL-notes-AuthStack/UserPoolClientId",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.24.0"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "BryanL-notes-AuthStack/Exports",
+            "children": {
+              "Output{\"Ref\":\"AuthUserPool8115E87F\"}": {
+                "id": "Output{\"Ref\":\"AuthUserPool8115E87F\"}",
+                "path": "BryanL-notes-AuthStack/Exports/Output{\"Ref\":\"AuthUserPool8115E87F\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
+              },
+              "Output{\"Ref\":\"AuthIdentityPool12DFB5E1\"}": {
+                "id": "Output{\"Ref\":\"AuthIdentityPool12DFB5E1\"}",
+                "path": "BryanL-notes-AuthStack/Exports/Output{\"Ref\":\"AuthIdentityPool12DFB5E1\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
+              },
+              "Output{\"Ref\":\"AuthUserPoolClient0AA456E4\"}": {
+                "id": "Output{\"Ref\":\"AuthUserPoolClient0AA456E4\"}",
+                "path": "BryanL-notes-AuthStack/Exports/Output{\"Ref\":\"AuthUserPoolClient0AA456E4\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.19"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.24.0"
+        }
+      },
+      "BryanL-notes-FrontendStack": {
+        "id": "BryanL-notes-FrontendStack",
+        "path": "BryanL-notes-FrontendStack",
+        "children": {
+          "SSTMetadata": {
+            "id": "SSTMetadata",
+            "path": "BryanL-notes-FrontendStack/SSTMetadata",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnResource",
+              "version": "2.24.0"
+            }
+          },
+          "ReactSite": {
+            "id": "ReactSite",
+            "path": "BryanL-notes-FrontendStack/ReactSite",
+            "children": {
+              "AwsCliLayer": {
+                "id": "AwsCliLayer",
+                "path": "BryanL-notes-FrontendStack/ReactSite/AwsCliLayer",
+                "children": {
+                  "Code": {
+                    "id": "Code",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/AwsCliLayer/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/AwsCliLayer/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.24.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/AwsCliLayer/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/AwsCliLayer/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                      "aws:cdk:cloudformation:props": {
+                        "content": {
+                          "s3Bucket": "cdk-hnb659fds-assets-499049105488-us-east-1",
+                          "s3Key": "e6b3c8169ff937ea363b0bb4d13b24b0a38c958c42318f72066e3e59f0148c2c.zip"
+                        },
+                        "description": "/opt/awscli/aws"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.lambda_layer_awscli.AwsCliLayer",
+                  "version": "2.24.0"
+                }
+              },
+              "SstSiteEnv_REACT_APP_API_URL": {
+                "id": "SstSiteEnv_REACT_APP_API_URL",
+                "path": "BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_API_URL",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
+              },
+              "SstSiteEnv_REACT_APP_REGION": {
+                "id": "SstSiteEnv_REACT_APP_REGION",
+                "path": "BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_REGION",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
+              },
+              "SstSiteEnv_REACT_APP_BUCKET": {
+                "id": "SstSiteEnv_REACT_APP_BUCKET",
+                "path": "BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_BUCKET",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
+              },
+              "SstSiteEnv_REACT_APP_USER_POOL_ID": {
+                "id": "SstSiteEnv_REACT_APP_USER_POOL_ID",
+                "path": "BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_USER_POOL_ID",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
+              },
+              "SstSiteEnv_REACT_APP_IDENTITY_POOL_ID": {
+                "id": "SstSiteEnv_REACT_APP_IDENTITY_POOL_ID",
+                "path": "BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_IDENTITY_POOL_ID",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
+              },
+              "SstSiteEnv_REACT_APP_USER_POOL_CLIENT_ID": {
+                "id": "SstSiteEnv_REACT_APP_USER_POOL_CLIENT_ID",
+                "path": "BryanL-notes-FrontendStack/ReactSite/SstSiteEnv_REACT_APP_USER_POOL_CLIENT_ID",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.24.0"
+                }
+              },
+              "Asset": {
+                "id": "Asset",
+                "path": "BryanL-notes-FrontendStack/ReactSite/Asset",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/Asset/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/Asset/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.24.0"
+                }
+              },
+              "S3Bucket": {
+                "id": "S3Bucket",
+                "path": "BryanL-notes-FrontendStack/ReactSite/S3Bucket",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/S3Bucket/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                      "aws:cdk:cloudformation:props": {
+                        "tags": [
+                          {
+                            "key": "aws-cdk:auto-delete-objects",
+                            "value": "true"
+                          },
+                          {
+                            "key": "sst:app",
+                            "value": "notes"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "BryanL"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Policy": {
+                    "id": "Policy",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/S3Bucket/Policy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/S3Bucket/Policy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
+                          "aws:cdk:cloudformation:props": {
+                            "bucket": {
+                              "Ref": "ReactSiteS3BucketB9BB7C04"
+                            },
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetBucket*",
+                                    "s3:List*",
+                                    "s3:DeleteObject*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "AWS": {
+                                      "Fn::GetAtt": [
+                                        "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+                                        "Arn"
+                                      ]
+                                    }
+                                  },
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "ReactSiteS3BucketB9BB7C04",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "ReactSiteS3BucketB9BB7C04",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": "s3:GetObject",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "CanonicalUser": {
+                                      "Fn::GetAtt": [
+                                        "ReactSiteDistributionOrigin1S3OriginE341B3F7",
+                                        "S3CanonicalUserId"
+                                      ]
+                                    }
+                                  },
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "ReactSiteS3BucketB9BB7C04",
+                                            "Arn"
+                                          ]
+                                        },
+                                        "/*"
+                                      ]
+                                    ]
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "AutoDeleteObjectsCustomResource": {
+                    "id": "AutoDeleteObjectsCustomResource",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/S3Bucket/AutoDeleteObjectsCustomResource",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/S3Bucket/AutoDeleteObjectsCustomResource/Default",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CustomResource",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.Bucket",
+                  "version": "2.24.0"
+                }
+              },
+              "S3Uploader": {
+                "id": "S3Uploader",
+                "path": "BryanL-notes-FrontendStack/ReactSite/S3Uploader",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/S3Uploader/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/S3Uploader/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "sst:app",
+                                "value": "notes"
+                              },
+                              {
+                                "key": "sst:stage",
+                                "value": "BryanL"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.24.0"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/S3Uploader/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "BryanL-notes-FrontendStack/ReactSite/S3Uploader/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "s3:GetObject*",
+                                        "s3:GetBucket*",
+                                        "s3:List*",
+                                        "s3:DeleteObject*",
+                                        "s3:PutObject",
+                                        "s3:PutObjectLegalHold",
+                                        "s3:PutObjectRetention",
+                                        "s3:PutObjectTagging",
+                                        "s3:PutObjectVersionTagging",
+                                        "s3:Abort*"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "ReactSiteS3BucketB9BB7C04",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "ReactSiteS3BucketB9BB7C04",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "Action": [
+                                        "s3:GetObject*",
+                                        "s3:GetBucket*",
+                                        "s3:List*"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":s3:::cdk-hnb659fds-assets-499049105488-us-east-1"
+                                            ]
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":s3:::cdk-hnb659fds-assets-499049105488-us-east-1/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "ReactSiteS3UploaderServiceRoleDefaultPolicy2FE62292",
+                                "roles": [
+                                  {
+                                    "Ref": "ReactSiteS3UploaderServiceRoleEA10A23A"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.24.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/S3Uploader/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/S3Uploader/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.24.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/S3Uploader/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/S3Uploader/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-499049105488-us-east-1",
+                          "s3Key": "a176020cb0bc8c6159d7300c297da1b4d984d2f80196448fbe79512997b20d80.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "ReactSiteS3UploaderServiceRoleEA10A23A",
+                            "Arn"
+                          ]
+                        },
+                        "handler": "s3-upload.handler",
+                        "layers": [
+                          {
+                            "Ref": "ReactSiteAwsCliLayer032ED8F7"
+                          }
+                        ],
+                        "memorySize": 1024,
+                        "runtime": "python3.7",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "notes"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "BryanL"
+                          }
+                        ],
+                        "timeout": 900
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.Function",
+                  "version": "2.24.0"
+                }
+              },
+              "S3Handler": {
+                "id": "S3Handler",
+                "path": "BryanL-notes-FrontendStack/ReactSite/S3Handler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/S3Handler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/S3Handler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "sst:app",
+                                "value": "notes"
+                              },
+                              {
+                                "key": "sst:stage",
+                                "value": "BryanL"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.24.0"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/S3Handler/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "BryanL-notes-FrontendStack/ReactSite/S3Handler/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "s3:GetObject*",
+                                        "s3:GetBucket*",
+                                        "s3:List*",
+                                        "s3:DeleteObject*",
+                                        "s3:PutObject",
+                                        "s3:PutObjectLegalHold",
+                                        "s3:PutObjectRetention",
+                                        "s3:PutObjectTagging",
+                                        "s3:PutObjectVersionTagging",
+                                        "s3:Abort*"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "ReactSiteS3BucketB9BB7C04",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "ReactSiteS3BucketB9BB7C04",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "Action": "lambda:InvokeFunction",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "ReactSiteS3Uploader4099484B",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "ReactSiteS3Uploader4099484B",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              ":*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "ReactSiteS3HandlerServiceRoleDefaultPolicy50C54561",
+                                "roles": [
+                                  {
+                                    "Ref": "ReactSiteS3HandlerServiceRoleB1C8F614"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.24.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/S3Handler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/S3Handler/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.24.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/S3Handler/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/S3Handler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-499049105488-us-east-1",
+                          "s3Key": "a176020cb0bc8c6159d7300c297da1b4d984d2f80196448fbe79512997b20d80.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "ReactSiteS3HandlerServiceRoleB1C8F614",
+                            "Arn"
+                          ]
+                        },
+                        "environment": {
+                          "variables": {
+                            "UPLOADER_FUNCTION_NAME": {
+                              "Ref": "ReactSiteS3Uploader4099484B"
+                            }
+                          }
+                        },
+                        "handler": "s3-handler.handler",
+                        "layers": [
+                          {
+                            "Ref": "ReactSiteAwsCliLayer032ED8F7"
+                          }
+                        ],
+                        "memorySize": 1024,
+                        "runtime": "python3.7",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "notes"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "BryanL"
+                          }
+                        ],
+                        "timeout": 900
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.Function",
+                  "version": "2.24.0"
+                }
+              },
+              "S3Deployment": {
+                "id": "S3Deployment",
+                "path": "BryanL-notes-FrontendStack/ReactSite/S3Deployment",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/S3Deployment/Default",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CustomResource",
+                  "version": "2.24.0"
+                }
+              },
+              "Distribution": {
+                "id": "Distribution",
+                "path": "BryanL-notes-FrontendStack/ReactSite/Distribution",
+                "children": {
+                  "Origin1": {
+                    "id": "Origin1",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/Distribution/Origin1",
+                    "children": {
+                      "S3Origin": {
+                        "id": "S3Origin",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/Distribution/Origin1/S3Origin",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "BryanL-notes-FrontendStack/ReactSite/Distribution/Origin1/S3Origin/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+                              "aws:cdk:cloudformation:props": {
+                                "cloudFrontOriginAccessIdentityConfig": {
+                                  "comment": "Identity for BryanLnotesFrontendStackReactSiteDistributionOrigin19374D954"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_cloudfront.CfnCloudFrontOriginAccessIdentity",
+                              "version": "2.24.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_cloudfront.OriginAccessIdentity",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "constructs.Construct",
+                      "version": "10.1.19"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/Distribution/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::CloudFront::Distribution",
+                      "aws:cdk:cloudformation:props": {
+                        "distributionConfig": {
+                          "enabled": true,
+                          "origins": [
+                            {
+                              "domainName": {
+                                "Fn::GetAtt": [
+                                  "ReactSiteS3BucketB9BB7C04",
+                                  "RegionalDomainName"
+                                ]
+                              },
+                              "id": "BryanLnotesFrontendStackReactSiteDistributionOrigin19374D954",
+                              "s3OriginConfig": {
+                                "originAccessIdentity": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "origin-access-identity/cloudfront/",
+                                      {
+                                        "Ref": "ReactSiteDistributionOrigin1S3OriginE341B3F7"
+                                      }
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "defaultCacheBehavior": {
+                            "pathPattern": "*",
+                            "targetOriginId": "BryanLnotesFrontendStackReactSiteDistributionOrigin19374D954",
+                            "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+                            "compress": true,
+                            "viewerProtocolPolicy": "redirect-to-https"
+                          },
+                          "aliases": [],
+                          "customErrorResponses": [
+                            {
+                              "errorCode": 403,
+                              "responseCode": 200,
+                              "responsePagePath": "/index.html"
+                            },
+                            {
+                              "errorCode": 404,
+                              "responseCode": 200,
+                              "responsePagePath": "/index.html"
+                            }
+                          ],
+                          "defaultRootObject": "index.html",
+                          "httpVersion": "http2",
+                          "ipv6Enabled": true
+                        },
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "notes"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "BryanL"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_cloudfront.CfnDistribution",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_cloudfront.Distribution",
+                  "version": "2.24.0"
+                }
+              },
+              "CloudFrontInvalidator": {
+                "id": "CloudFrontInvalidator",
+                "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "sst:app",
+                                "value": "notes"
+                              },
+                              {
+                                "key": "sst:stage",
+                                "value": "BryanL"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.24.0"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "cloudfront:GetInvalidation",
+                                        "cloudfront:CreateInvalidation"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "ReactSiteCloudFrontInvalidatorServiceRoleDefaultPolicyB61C59B5",
+                                "roles": [
+                                  {
+                                    "Ref": "ReactSiteCloudFrontInvalidatorServiceRole0398B530"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.24.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.24.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.24.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.24.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidator/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-499049105488-us-east-1",
+                          "s3Key": "a176020cb0bc8c6159d7300c297da1b4d984d2f80196448fbe79512997b20d80.zip"
+                        },
+                        "role": {
+                          "Fn::GetAtt": [
+                            "ReactSiteCloudFrontInvalidatorServiceRole0398B530",
+                            "Arn"
+                          ]
+                        },
+                        "handler": "cf-invalidate.handler",
+                        "layers": [
+                          {
+                            "Ref": "ReactSiteAwsCliLayer032ED8F7"
+                          }
+                        ],
+                        "memorySize": 1024,
+                        "runtime": "python3.7",
+                        "tags": [
+                          {
+                            "key": "sst:app",
+                            "value": "notes"
+                          },
+                          {
+                            "key": "sst:stage",
+                            "value": "BryanL"
+                          }
+                        ],
+                        "timeout": 900
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.Function",
+                  "version": "2.24.0"
+                }
+              },
+              "CloudFrontInvalidation": {
+                "id": "CloudFrontInvalidation",
+                "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidation",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "BryanL-notes-FrontendStack/ReactSite/CloudFrontInvalidation/Default",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.24.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CustomResource",
+                  "version": "2.24.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.19"
+            }
+          },
+          "Custom::S3AutoDeleteObjectsCustomResourceProvider": {
+            "id": "Custom::S3AutoDeleteObjectsCustomResourceProvider",
+            "path": "BryanL-notes-FrontendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider",
+            "children": {
+              "Staging": {
+                "id": "Staging",
+                "path": "BryanL-notes-FrontendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Staging",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.AssetStaging",
+                  "version": "2.24.0"
+                }
+              },
+              "Role": {
+                "id": "Role",
+                "path": "BryanL-notes-FrontendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.24.0"
+                }
+              },
+              "Handler": {
+                "id": "Handler",
+                "path": "BryanL-notes-FrontendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.24.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CustomResourceProvider",
+              "version": "2.24.0"
+            }
+          },
+          "SiteUrl": {
+            "id": "SiteUrl",
+            "path": "BryanL-notes-FrontendStack/SiteUrl",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
               "version": "2.24.0"

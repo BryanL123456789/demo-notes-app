@@ -1759,6 +1759,17 @@
    "Export": {
     "Name": "BryanL-notes-ApiStack:ExportsOutputRefApiCD79AAA0A1504A18"
    }
+  },
+  "ExportsOutputFnGetAttApiCD79AAA0ApiEndpoint389C4905": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ApiCD79AAA0",
+     "ApiEndpoint"
+    ]
+   },
+   "Export": {
+    "Name": "BryanL-notes-ApiStack:ExportsOutputFnGetAttApiCD79AAA0ApiEndpoint389C4905"
+   }
   }
  },
  "Parameters": {
