@@ -10,6 +10,38 @@
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"],
       "env": {}
+    },
+    {
+      "name": "SST - sandbox - Chuck",
+      "type": "node",
+      "trace": true,
+      "sourceMaps": true,
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/sst",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": [
+        "start",
+        "--increase-timeout",
+        "--stage BryanL --profile default"
+      ],
+      "console": "integratedTerminal",
+      "env": { "AWS_PROFILE": "default" },
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "SST - ys-dev - Chuck",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/sst",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": [
+        "start",
+        "--increase-timeout",
+        "--stage BryanL --profile ys-dev"
+      ],
+      "console": "integratedTerminal",
+      "env": { "AWS_PROFILE": "ys-dev" },
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }
